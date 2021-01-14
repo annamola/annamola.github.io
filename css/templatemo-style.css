@@ -3,7 +3,87 @@
 	http://www.templatemo.com/preview/templatemo_423_artcore
 */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -15,15 +95,14 @@ body {
   line-height: 1;
 }
 
-
 .blue {
-	color: #39F;
-	font-weight: normal;
+  color: #39f;
+  font-weight: normal;
 }
 
 .green {
-	color: #0C0;
-	font-weight: normal;
+  color: #0c0;
+  font-weight: normal;
 }
 
 ol,
@@ -38,7 +117,7 @@ q {
 
 blockquote:before,
 blockquote:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -91,11 +170,11 @@ sup {
 }
 
 sup {
-  top: -.5em;
+  top: -0.5em;
 }
 
 sub {
-  bottom: -.25em;
+  bottom: -0.25em;
 }
 
 img {
@@ -149,14 +228,20 @@ textarea {
   vertical-align: top;
 }
 
-.top-header .logo span, .section-header span, .team-member span, .project-infos span.project-subtitle, .post-masonry .blog-body span, .blog-info span.blog-meta, .comment-body span {
-  font-size: .84em;
+.top-header .logo span,
+.section-header span,
+.team-member span,
+.project-infos span.project-subtitle,
+.post-masonry .blog-body span,
+.blog-info span.blog-meta,
+.comment-body span {
+  font-size: 0.84em;
   color: #aaaaaa;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: .89em;
+  font-size: 0.89em;
   line-height: 1.75;
   color: #777777;
   background-color: #efefef;
@@ -175,12 +260,19 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Roboto Slab", serif;
   color: #2c2c2c;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -268,7 +360,9 @@ input.mainBtn:hover {
   z-index: 8;
 }
 
-a.btn-left, .top-header .social-top ul li a, .main-header .menu-wrapper a.toggle-menu {
+a.btn-left,
+.top-header .social-top ul li a,
+.main-header .menu-wrapper a.toggle-menu {
   border: 1px solid #d5d5d5;
   width: 36px;
   height: 36px;
@@ -277,7 +371,9 @@ a.btn-left, .top-header .social-top ul li a, .main-header .menu-wrapper a.toggle
   display: inline-block;
   color: #2c2c2c;
 }
-a.btn-left:hover, .top-header .social-top ul li a:hover, .main-header .menu-wrapper a.toggle-menu:hover {
+a.btn-left:hover,
+.top-header .social-top ul li a:hover,
+.main-header .menu-wrapper a.toggle-menu:hover {
   color: #2c2c2c;
   border-color: #2c2c2c;
 }
@@ -392,12 +488,12 @@ a.btn-left:hover, .top-header .social-top ul li a:hover, .main-header .menu-wrap
   position: relative;
 }
 .main-header .menu-wrapper ul li:after {
-  content: '/';
+  content: "/";
   color: #d5d5d5;
   margin-left: 30px;
 }
 .main-header .menu-wrapper ul li:last-child:after {
-  content: '';
+  content: "";
   display: none;
 }
 .main-header .menu-wrapper ul li a {
@@ -423,7 +519,7 @@ a.btn-left:hover, .top-header .social-top ul li a:hover, .main-header .menu-wrap
   background-color: white;
 }
 .main-header .menu-wrapper ul li ul:before {
-  content: ' ';
+  content: " ";
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -623,6 +719,7 @@ a.btn-left:hover, .top-header .social-top ul li a:hover, .main-header .menu-wrap
 
 .swiper-slide {
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
@@ -1231,7 +1328,7 @@ div.load-more a.load-more:active {
   margin: 0 5px;
 }
 .blog-tags a:after {
-  content: ',';
+  content: ",";
   color: #aaaaaa;
 }
 

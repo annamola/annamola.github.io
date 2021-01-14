@@ -160,7 +160,8 @@ Pagination Styles
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-.fancybox-outer, .fancybox-inner {
+.fancybox-outer,
+.fancybox-inner {
   position: relative;
 }
 
@@ -174,13 +175,14 @@ Pagination Styles
 
 .fancybox-error {
   color: #444;
-  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 15px;
   white-space: nowrap;
 }
 
-.fancybox-image, .fancybox-iframe {
+.fancybox-image,
+.fancybox-iframe {
   display: block;
   width: 100%;
   height: 100%;
@@ -191,7 +193,10 @@ Pagination Styles
   max-height: 100%;
 }
 
-#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+#fancybox-loading,
+.fancybox-close,
+.fancybox-prev span,
+.fancybox-next span {
   background-image: url("../images/fancybox_sprite.png");
 }
 
@@ -317,7 +322,7 @@ Pagination Styles
 /* Title helper */
 .fancybox-title {
   visibility: hidden;
-  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   text-shadow: none;
   z-index: 8050;
@@ -347,7 +352,7 @@ Pagination Styles
   -moz-border-radius: 15px;
   border-radius: 15px;
   text-shadow: 0 1px 2px #222;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   line-height: 24px;
   white-space: nowrap;
@@ -374,8 +379,13 @@ Pagination Styles
 }
 
 /*Retina graphics!*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  #fancybox-loading,
+  .fancybox-close,
+  .fancybox-prev span,
+  .fancybox-next span {
     background-image: url("../images/fancybox_sprite@2x.png");
     background-size: 44px 152px;
     /*The size of the normal image, half the size of the hi-res image*/
