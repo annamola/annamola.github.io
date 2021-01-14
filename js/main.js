@@ -101,19 +101,6 @@ jQuery(document).ready(function($) {
     	    e.preventDefault()
     	    mySwiper.swipeNext()
         })
-        
-        // var swiper = new Swiper('.swiper-container', {
-        //     // Enable lazy loading
-        //     lazy: true,
-        //     pagination: {
-        //       el: '.swiper-pagination',
-        //       clickable: true,
-        //     },
-        //     navigation: {
-        //       nextEl: '.swiper-button-next',
-        //       prevEl: '.swiper-button-prev',
-        //     },
-        // },
 
 	/************** SlideJS *********************/
     	$('.project-slider').slidesjs({
