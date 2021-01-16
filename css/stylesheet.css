@@ -5,7 +5,40 @@
 }
 body.stop-transitions * {
     transition: none !important;
-  }
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4%;
+    padding: 4px;
+    background-color: #e6e6e6;
+    color: rgb(22, 22, 22);
+    font-size: 12px;
+    font-family: "Palanquin", sans-serif;
+}
+.fa {
+    padding: 10px;
+    font-size: 50px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-instagram {
+    background: rgb(22, 22, 22);
+    color: white;
+}
+.fa-linkedin {
+    background: rgb(22, 22, 22);
+    color: white;
+}
 nav {
     display: flex;
     justify-content: space-around;
@@ -144,7 +177,7 @@ nav {
     .nav-links {
         position: absolute;
         right: 0px;
-        height: 91vh;
+        height: 92vh;
         top: 8vh;
         background-color: #e6e6e6;
         display: flex;

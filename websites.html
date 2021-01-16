@@ -39,6 +39,14 @@
             rel="stylesheet"
             href="https://unpkg.com/swiper/swiper-bundle.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <!-- <link rel="stylesheet" href="css/font-awesome.css" /> -->
+        <!-- <link rel="stylesheet" href="css/animate.css" />
+        <link rel="stylesheet" href="css/templatemo-misc.css" />
+        <link rel="stylesheet" href="css/templatemo-style.css" /> -->
     </head>
     <body>
         <nav>
@@ -67,7 +75,26 @@
         </nav>
         <script src="js/app.js"></script>
         <footer>
-            <p>Anna Mola. All rights reserved.</p>
+            <p>Anna Mola</p>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-linkedin"></a>
         </footer>
+        <script>
+            (function () {
+                const classes = document.body.classList;
+                let timer = 0;
+                window.addEventListener("resize", function () {
+                    if (timer) {
+                        clearTimeout(timer);
+                        timer = null;
+                    } else classes.add("stop-transitions");
+
+                    timer = setTimeout(() => {
+                        classes.remove("stop-transitions");
+                        timer = null;
+                    }, 100);
+                });
+            })();
+        </script>
     </body>
 </html>

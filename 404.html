@@ -2,9 +2,9 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8" />
-        <title>Artcore - 404 Error Page</title>
+        <title>Anna Mola - Home</title>
         <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -39,6 +39,14 @@
             rel="stylesheet"
             href="https://unpkg.com/swiper/swiper-bundle.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <!-- <link rel="stylesheet" href="css/font-awesome.css" /> -->
+        <!-- <link rel="stylesheet" href="css/animate.css" />
+        <link rel="stylesheet" href="css/templatemo-misc.css" />
+        <link rel="stylesheet" href="css/templatemo-style.css" /> -->
     </head>
     <body>
         <nav>
@@ -104,26 +112,27 @@
         </div>
         <!-- /.content-wrapper -->
 
-        <script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <footer>
+            <p>Anna Mola</p>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+        </footer>
         <script>
-            window.jQuery ||
-                document.write(
-                    '<script src="js/vendor/jquery-1.11.0.min.js"><\/script>'
-                );
-        </script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+            (function () {
+                const classes = document.body.classList;
+                let timer = 0;
+                window.addEventListener("resize", function () {
+                    if (timer) {
+                        clearTimeout(timer);
+                        timer = null;
+                    } else classes.add("stop-transitions");
 
-        <!-- Preloader -->
-        <script type="text/javascript">
-            //<![CDATA[
-            $(window).load(function () {
-                // makes sure the whole site is loaded
-                $(".loader-item").fadeOut(); // will first fade out the loading animation
-                $("#pageloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
-                $("body").delay(350).css({ "overflow-y": "visible" });
-            });
-            //]]>
+                    timer = setTimeout(() => {
+                        classes.remove("stop-transitions");
+                        timer = null;
+                    }, 100);
+                });
+            })();
         </script>
     </body>
 </html>
