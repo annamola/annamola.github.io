@@ -3,7 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+body.stop-transitions * {
+    transition: none !important;
+  }
 nav {
     display: flex;
     justify-content: space-around;
@@ -177,7 +179,6 @@ nav {
         transform: translateX(0px);
     }
 }
-
 .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
 }

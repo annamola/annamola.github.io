@@ -23,24 +23,3 @@ const navSlide = () => {
     
 }
 navSlide();
-
-/************** Superfish (DropDown Menu) *********************/
-
-jQuery(document).ready(function($) {
-    function initSuperFish(){
-            
-        $(".nav-links").superfish({
-             delay:  50,
-             autoArrows: true,
-             animation:   {opacity:'show'}
-             //cssArrows: true
-        });
-        
-    }
-    
-    initSuperFish();
-    
-    $('.sub-menu').addClass('animated fadeInRight');
-    
-})
-
