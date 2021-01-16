@@ -22,10 +22,19 @@ nav {
     font-size: 30px;
     cursor: pointer;
 }
+.nav-links-div {
+    /* background-color: purple; */
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    /* width: 36%; */
+}
 .nav-links {
+    /* background-color: red; */
     display: flex;
     justify-content: space-around;
-    width: 36%;
+    column-gap: 30%;
+    /* width: 36%; */
 }
 .nav-links a {
     color: rgb(22, 22, 22);
@@ -37,6 +46,69 @@ nav {
 .nav-links li {
     list-style: none;
 }
+.nav-links li a:hover {
+    color: #f69730;
+}
+.nav-links li.active {
+    color: blue;
+}
+.nav-links ul li a:hover {
+    color: red;
+}
+/* .nav-links li ul {
+    position: absolute;
+    width: 200px;
+    z-index: 9999;
+    top: 40px;
+    left: 50%;
+    margin-left: -115px;
+    text-align: center;
+    background-color: white;
+}
+.nav-links li ul:before {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    position: absolute;
+    top: -10px;
+    margin-left: -10px;
+    left: 50%;
+}
+.nav-links li ul li {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0;
+    border-bottom: 1px solid cyan;
+}
+.nav-links li ul li:last-child {
+    border-bottom: 0;
+}
+.nav-links li ul li a {
+    display: block;
+    padding: 10px;
+    color: purple !important;
+}
+
+.nav-links li ul li a:hover {
+    color: brown !important;
+}
+.nav-links li ul li:after {
+    display: none;
+}
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    .nav-links {
+        margin-top: 0 !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        margin-top: 0 !important;
+    }
+} */
 
 .textSwiper {
     color: rgb(231, 231, 231);
@@ -61,15 +133,6 @@ nav {
     margin: 5px;
     border-radius: 2px;
     transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 1024px) {
-    .nav-links {
-        display: flex;
-        /* background-color: red; */
-        justify-content: space-between;
-        width: 40%;
-    }
 }
 
 @media screen and (max-width: 768px) {
