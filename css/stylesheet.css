@@ -402,16 +402,31 @@ header {
 }
 
 .textSwiper {
-    color: rgb(231, 231, 231);
+    color: rgb(154, 154, 154);
     text-transform: lowercase;
     font-size: 7.2vh;
     font-family: "Palanquin", sans-serif;
     position: absolute;
-    z-index: 4;
+    z-index: 8;
     top: 40%;
     width: 100%;
     text-align: center;
+    text-shadow: 2px 4px #000000a3;
+    background-color: white;
+}
+.textSwiper2 {
+    color: rgb(231, 231, 231);
+    text-transform: lowercase;
+    text-decoration: underline;
+    font-size: 7.2vh;
+    font-family: "Palanquin", sans-serif;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    width: 100%;
+    text-align: center;
     text-shadow: 2px 5px #0000006f;
+    background-color: white;
 }
 /* footer */
 footer {
