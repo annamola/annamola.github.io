@@ -6,9 +6,9 @@
 body.stop-transitions * {
     transition: none !important;
 }
-html, body {
-    overflow-x:hidden 
-  } 
+body {
+    overflow: hidden;
+    }
 footer {
     display: flex;
     flex-direction: row;
@@ -168,11 +168,41 @@ nav {
     border-radius: 2px;
     transition: all 0.3s ease;
 }
+/* ----------- iPhone 6 ----------- */
 
+@media screen and (max-width: 375px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #e6e6e6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        z-index: 5;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+/* ----------- iPad mini ----------- */
 @media screen and (max-width: 768px) {
-    html, body {
-        overflow-x:hidden 
-      } 
+    body {
+        overflow-x: hidden !important;
+    }
     .nav-links {
         position: absolute;
         right: 0px;
