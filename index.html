@@ -51,110 +51,110 @@
         <link rel="stylesheet" href="css/templatemo-misc.css" />
         <link rel="stylesheet" href="css/templatemo-style.css" /> -->
     </head>
-    <body>
-        <nav>
-            <div class="logo">
-                <h4><a href="index.html">anna mola</a></h4>
-            </div>
-            <div class="nav-links-div">
-                <ul class="nav-links">
-                    <li><a href="about.html">About</a></li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                        <!-- <ul>
+        <body>
+            <nav>
+                <div class="logo">
+                    <h4><a href="index.html">anna mola</a></h4>
+                </div>
+                <div class="nav-links-div">
+                    <ul class="nav-links">
+                        <li><a href="about.html">About</a></li>
+                        <li>
+                            <a href="#">Portfolio</a>
+                            <!-- <ul>
                             <li><a href="art.html">Art</a></li>
                             <li><a href="websites.html">Websites</a></li>
                             <li><a href="programming.html">Programming</a></li>
                         </ul> -->
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-
-        <div class="swiper-container">
-            <h4 class="textSwiper">Welcome to my site!</h4>
-            <div class="swiper-wrapper">
-                <div
-                    class="swiper-slide"
-                    style="background-image: url(images/art/IMG_4499.jpg)"
-                >
-                    <div class="slider-caption"></div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-                <div
-                    class="swiper-slide"
-                    style="background-image: url(images/art/oran.jpg)"
-                >
-                    <div class="slider-caption"></div>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
                 </div>
-                <div
-                    class="swiper-slide"
-                    style="background-image: url(images/art/IMG_9114.JPG)"
-                >
-                    <div class="slider-caption"></div>
+            </nav>
+
+            <div class="swiper-container">
+                <h4 class="textSwiper">Welcome to my site!</h4>
+                <div class="swiper-wrapper">
+                    <div
+                        class="swiper-slide"
+                        style="background-image: url(images/art/IMG_4499.jpg)"
+                    >
+                        <div class="slider-caption"></div>
+                    </div>
+                    <div
+                        class="swiper-slide"
+                        style="background-image: url(images/art/oran.jpg)"
+                    >
+                        <div class="slider-caption"></div>
+                    </div>
+                    <div
+                        class="swiper-slide"
+                        style="background-image: url(images/art/IMG_9114.JPG)"
+                    >
+                        <div class="slider-caption"></div>
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
 
-        <script src="js/app.js"></script>
+            <script src="js/app.js"></script>
 
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script>
-            var swiper = new Swiper(".swiper-container", {
-                spaceBetween: 30,
-                centeredSlides: true,
-                loop: true,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                effect: "fade",
-                fadeEffect: {
-                    crossFade: true,
-                },
-            });
-        </script>
-
-        <footer>
-            <p>Anna Mola</p>
-            <a
-                href="https://www.instagram.com/moladesk/"
-                class="fa fa-instagram"
-            ></a>
-            <a
-                href="https://www.linkedin.com/in/anna-mola-b90581104/"
-                class="fa fa-linkedin"
-            ></a>
-        </footer>
-        <script>
-            (function () {
-                const classes = document.body.classList;
-                let timer = 0;
-                window.addEventListener("resize", function () {
-                    if (timer) {
-                        clearTimeout(timer);
-                        timer = null;
-                    } else classes.add("stop-transitions");
-
-                    timer = setTimeout(() => {
-                        classes.remove("stop-transitions");
-                        timer = null;
-                    }, 100);
+            <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <script>
+                var swiper = new Swiper(".swiper-container", {
+                    spaceBetween: 30,
+                    centeredSlides: true,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    effect: "fade",
+                    fadeEffect: {
+                        crossFade: true,
+                    },
                 });
-            })();
-        </script>
-        <!-- <script src="js/vendor/jquery-1.11.0.min.js"></script>
+            </script>
+
+            <footer>
+                <p>Anna Mola</p>
+                <a
+                    href="https://www.instagram.com/moladesk/"
+                    class="fa fa-instagram"
+                ></a>
+                <a
+                    href="https://www.linkedin.com/in/anna-mola-b90581104/"
+                    class="fa fa-linkedin"
+                ></a>
+            </footer>
+            <script>
+                (function () {
+                    const classes = document.body.classList;
+                    let timer = 0;
+                    window.addEventListener("resize", function () {
+                        if (timer) {
+                            clearTimeout(timer);
+                            timer = null;
+                        } else classes.add("stop-transitions");
+
+                        timer = setTimeout(() => {
+                            classes.remove("stop-transitions");
+                            timer = null;
+                        }, 100);
+                    });
+                })();
+            </script>
+            <!-- <script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script>
             window.jQuery ||
                 document.write(
@@ -164,7 +164,7 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script> -->
 
-        <!-- <script type="text/javascript">
+            <!-- <script type="text/javascript">
             //<![CDATA[
             $(window).load(function () {
                 // makes sure the whole site is loaded
@@ -174,5 +174,5 @@
             });
             //]]>
         </script> -->
-    </body>
+        </body>
 </html>
