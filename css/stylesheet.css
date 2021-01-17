@@ -69,6 +69,7 @@ header {
     flex: 1;
     align-items: center;
     justify-content: center;
+    column-gap: 10%;
 }
 .btn {
     display: inline-block;
@@ -437,28 +438,29 @@ footer {
     column-gap: 4%;
     padding: 4px;
     background-color: #e6e6e6;
-    color: rgb(22, 22, 22);
-    font-size: 12px;
-    font-family: "Palanquin", sans-serif;
+    /* color: rgb(22, 22, 22); */
+    /* font-size: 12px; */
+    /* font-family: "Palanquin", sans-serif; */
 }
-.fa {
-    padding: 10px;
-    font-size: 50px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
+.fab {
+    /* padding: 5px; */
+    font-size: 35px;
+    /* width: 35px; */
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* border-radius: 50%; */
 }
 
-.fa:hover {
+.fab:hover {
     opacity: 0.7;
+    cursor: pointer;
 }
 
-.fa-instagram {
-    background: rgb(22, 22, 22);
-    color: white;
+.fa-instagram-square {
+    background-color: transparent;
+    color: rgb(22, 22, 22);
 }
 .fa-linkedin {
-    background: rgb(22, 22, 22);
-    color: white;
+    background-color: transparent;
+    color: rgb(22, 22, 22);
 }
