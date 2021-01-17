@@ -6,6 +6,9 @@
 body.stop-transitions * {
     transition: none !important;
 }
+html, body {
+    overflow-x:hidden 
+  } 
 footer {
     display: flex;
     flex-direction: row;
@@ -58,18 +61,14 @@ nav {
     cursor: pointer;
 }
 .nav-links-div {
-    /* background-color: purple; */
     display: flex;
     flex-direction: row;
     justify-content: stretch;
-    /* width: 36%; */
 }
 .nav-links {
-    /* background-color: red; */
     display: flex;
     justify-content: space-around;
     column-gap: 30%;
-    /* width: 36%; */
 }
 .nav-links a {
     color: rgb(22, 22, 22);
@@ -171,9 +170,9 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
+    html, body {
+        overflow-x:hidden 
+      } 
     .nav-links {
         position: absolute;
         right: 0px;
