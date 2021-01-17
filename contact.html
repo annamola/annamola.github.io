@@ -4,7 +4,10 @@
         <meta charset="utf-8" />
         <title>Contact</title>
         <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, height=device-height, initial-scale=1.0"
+        />
         <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -43,36 +46,64 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
-        <!-- <link rel="stylesheet" href="css/font-awesome.css" /> -->
+        <link rel="stylesheet" href="css/all.css" />
+
         <!-- <link rel="stylesheet" href="css/animate.css" />
         <link rel="stylesheet" href="css/templatemo-misc.css" />
         <link rel="stylesheet" href="css/templatemo-style.css" /> -->
     </head>
     <body>
-        <nav>
-            <div class="logo">
-                <h4><a href="index.html">anna mola</a></h4>
+        <header>
+            <div class="container">
+                <input type="checkbox" name="" id="check" />
+                <div class="logo-container">
+                    <h3 class="logo">
+                        <a href="index.html">Anna<span>Mola</span></a>
+                    </h3>
+                </div>
+                <div class="nav-btn">
+                    <div class="nav-links">
+                        <ul>
+                            <li class="nav-link" style="--i: 0.6s">
+                                <a href="about.html">About</a>
+                            </li>
+                            <li class="nav-link" style="--i: 0.85s">
+                                <a href="#"
+                                    >Portfolio<i class="fas fa-caret-down"></i
+                                ></a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li class="dropdown-link">
+                                            <a href="art.html">Art</a>
+                                        </li>
+                                        <li class="dropdown-link">
+                                            <a href="websites.html">Websites</a>
+                                        </li>
+                                        <li class="dropdown-link">
+                                            <a href="programming.html"
+                                                >Programming</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-link" style="--i: 1s">
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="log-sign" style="--i: 1.15s">
+                        <a href="#" class="btn transparent">Log in</a>
+                        <a href="#" class="btn solid">Sign up</a>
+                    </div>
+                </div>
+                <div class="hamburger-menu-container">
+                    <div class="hamburger-menu">
+                        <div></div>
+                    </div>
+                </div>
             </div>
-            <div class="nav-links-div">
-                <ul class="nav-links">
-                    <li><a href="about.html">About</a></li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                        <!-- <ul>
-                            <li><a href="art.html">Art</a></li>
-                            <li><a href="websites.html">Websites</a></li>
-                            <li><a href="programming.html">Programming</a></li>
-                        </ul> -->
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
+        </header>
         <script src="js/app.js"></script>
 
         <div class="content-wrapper">
