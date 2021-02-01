@@ -41,7 +41,7 @@ header {
 }
 .logo {
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
     text-transform: lowercase;
@@ -159,9 +159,9 @@ header {
     text-decoration: none;
 }
 
-.dropdown-link:not(:nth-last-child(2)) {
+/* .dropdown-link:not(:nth-last-child(2)) {
     border-bottom: 1px solid #e6e6e6;
-}
+} */
 
 .dropdown-link i {
     transform: rotate(-90deg);
@@ -273,6 +273,17 @@ header {
 }
 
 @media (max-width: 920px) {
+    .about-1 {
+        justify-content: center;
+        padding-top: 30px;
+        /* background-color: red; */
+    }
+    #about-container {
+        /* margin: 1px; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+    }
     .hamburger-menu-container {
         display: flex;
     }
@@ -610,27 +621,47 @@ footer {
 .about-1 {
     justify-content: center;
     padding-top: 30px;
+    /* background-color: red; */
 }
-.about-1 p {
-    margin-top: 10%;
+.about-1 .col-sm-4 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
+.about-1 .col-sm-8 {
+    /* background-color: yellowgreen; */
+    padding: 0rem 5rem 0rem 5rem;
+}
+/* .about-2 {
+    background-color: blue;
+} */
+
 .about-1 h2 {
     text-align: center;
 }
 .about-1 img {
-    /* border: 1px solid white; */
-    padding: 1vw 1vw 7vw 1vw;
+    max-height: 400px;
+    padding: 0.4vw 0.4vw 3vw 0.4vw;
     box-shadow: 0px 6px 20px -3px rgba(0, 0, 0, 0.54);
+}
+.resume-p {
+    text-align: center;
+    margin: 0px;
+    margin-top: 0px;
 }
 .about-1 a {
     display: flex;
     justify-content: center;
+    /* max-width: 50px; */
+}
+.about-1 svg {
+    max-width: 7rem;
 }
 
 path {
     fill: #9b361d;
 }
-​ .column-1 {
+.column-1 h1 {
     text-align: center;
 }
 .column-2 {
@@ -708,4 +739,23 @@ ul {
     border: 1px solid rgb(147, 147, 147);
     border-radius: 5px;
     padding: 5px;
+}
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+}
+
+#loading-image {
+    position: absolute;
+    top: 100px;
+    left: 240px;
+    z-index: 100;
 }
