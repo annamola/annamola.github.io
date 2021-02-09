@@ -32,6 +32,7 @@ header {
     display: flex;
     flex-direction: row;
     position: relative;
+    height: 5rem;
 }
 
 .logo-container {
@@ -41,7 +42,7 @@ header {
 }
 .logo {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     text-decoration: none;
     text-transform: lowercase;
@@ -61,6 +62,7 @@ header {
 .nav-btn {
     flex: 3;
     display: flex;
+    align-items: center;
 }
 .nav-links {
     flex: 2;
@@ -764,4 +766,20 @@ ul {
     align-items: center;
     padding: 10vh;
     height: 200vh;
+}
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+
+.hidden {
+    opacity: 0;
+}
+.console-container {
+    font-size: 2em;
+    text-align: left;
+    display: flex;
+    color: white;
+}
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    left: 10px;
 }
