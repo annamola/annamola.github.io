@@ -115,50 +115,15 @@
                 </div>
             </div>
         </header>
-        <div
-            id="adobe-dc-view"
-            style="height: 360px; width: 500px; align-items: center"
-        ></div>
-        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-        <script type="text/javascript">
-            document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                var adobeDCView = new AdobeDC.View({
-                    clientId: "dfb2f9294d664b62946ab25387113254",
-                    divId: "adobe-dc-view",
-                });
-                adobeDCView.previewFile(
-                    {
-                        content: {
-                            location: {
-                                url: "images\myZine.pdf",
-                            },
-                        },
-                        metaData: { fileName: "Bodea Brochure.pdf" },
-                    },
-                    { embedMode: "SIZED_CONTAINER" }
-                );
-            });
-        </script>
-        <!-- <div
-            id="adobe-dc-view"
-            style="height: 360px; width: 500px, align-items:center;"
-        ></div>
-        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-        <script type="text/javascript">
-            document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                var adobeDCView = new AdobeDC.View({
-                    clientId: "dfb2f9294d664b62946ab25387113254",
-                    divId: "adobe-dc-view",
-                });
-                adobeDCView.previewFile(
-                    {
-                        content: { promise: "<FILE_BLOB_PROMISE>" },
-                        metaData: { fileName: "/images/myZine.pdf" },
-                    },
-                    { embedMode: "SIZED_CONTAINER" }
-                );
-            });
-        </script> -->
+        <div class="pdf-embed">
+            <embed
+                src="https://drive.google.com/viewerng/
+viewer?embedded=true&url=https://github.com/annamola/annamola.github.io/raw/main/images/myZine.pdf"
+                width="100%"
+                height="100%"
+            />
+        </div>
+
         <footer>
             <p>anna mola</p>
         </footer>

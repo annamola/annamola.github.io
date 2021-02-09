@@ -759,3 +759,9 @@ ul {
     left: 240px;
     z-index: 100;
 }
+
+.pdf-embed {
+    align-items: center;
+    padding: 10vh;
+    height: 200vh;
+}
