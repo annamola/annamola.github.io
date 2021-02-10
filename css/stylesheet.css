@@ -5,7 +5,7 @@
 }
 body {
     overflow-x: hidden;
-    font-family: "Palanquin", sans-serif;
+    font-family: "Roboto Slab", serif;
 }
 body.stop-transitions * {
     transition: none !important;
@@ -20,7 +20,7 @@ a {
 header {
     position: sticky;
     top: 0px;
-    background-color: #e6e6e6;
+    background-color: white;
     width: 100%;
     z-index: 1000;
 }
@@ -43,7 +43,7 @@ header {
 .logo {
     color: #fff;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 800;
     text-decoration: none;
     text-transform: lowercase;
     line-height: 3rem;
@@ -55,8 +55,23 @@ header {
 }
 .logo-container a {
     color: rgb(22, 22, 22);
-    letter-spacing: 5px;
     text-decoration: none;
+}
+
+.hidden {
+    opacity: 0;
+}
+.console-container {
+    font-size: 2em;
+    text-align: left;
+    display: flex;
+    color: black;
+    font-weight: 700;
+}
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    left: 10px;
 }
 
 .nav-btn {
@@ -110,7 +125,7 @@ header {
     color: rgb(22, 22, 22);
     padding: 0 0.8rem;
     letter-spacing: 1px;
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -122,9 +137,21 @@ header {
     margin-left: 0.2rem;
 }
 
-.nav-link-custom:hover > a {
-    transform: scale(1.1);
-    text-decoration: none;
+.nav-link-custom:after {
+    background: none repeat scroll 0 0 transparent;
+    margin-top: -10px;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    background: tomato;
+    transition: width 0.6s ease 0s, left 0.6s ease 0s;
+    width: 0;
+}
+.nav-link-custom:hover:after {
+    width: 80%;
+    left: 10%;
 }
 
 .dropdown-btn {
@@ -297,7 +324,7 @@ header {
     .nav-btn {
         position: fixed;
         height: calc(100vh - 3rem);
-        top: 3rem;
+        top: 5rem;
         left: 0;
         width: 100%;
         background-color: #e2e2e2;
@@ -415,7 +442,7 @@ header {
 
 .swiper-container {
     width: 100%;
-    height: 91vh;
+    height: 85vh;
 }
 .swiper-slide {
     background-position: center;
@@ -456,7 +483,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 4px;
-    background-color: #e6e6e6;
+    background-color: white;
     /* color: rgb(22, 22, 22); */
     /* font-size: 12px; */
     /* font-family: "Palanquin", sans-serif; */
@@ -471,20 +498,24 @@ footer {
 }
 
 .fab:hover {
-    opacity: 0.7;
+    color: tomato;
+    transition: color 0.2s ease-in-out;
     cursor: pointer;
 }
 
 .fa-instagram-square {
     background-color: transparent;
+    transition: color 0.2s ease-in-out;
     color: rgb(22, 22, 22);
 }
 .fa-linkedin {
     background-color: transparent;
+    transition: color 0.2s ease-in-out;
     color: rgb(22, 22, 22);
 }
 .fa-github-square {
     background-color: transparent;
+    transition: color 0.2s ease-in-out;
     color: rgb(22, 22, 22);
 }
 .websites {
@@ -766,20 +797,4 @@ ul {
     align-items: center;
     padding: 10vh;
     height: 200vh;
-}
-@import url(https://fonts.googleapis.com/css?family=Khula:700);
-
-.hidden {
-    opacity: 0;
-}
-.console-container {
-    font-size: 2em;
-    text-align: left;
-    display: flex;
-    color: white;
-}
-.console-underscore {
-    display: inline-block;
-    position: relative;
-    left: 10px;
 }
