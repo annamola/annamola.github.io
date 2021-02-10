@@ -795,3 +795,11 @@ ul {
     padding: 10vh;
     height: 200vh;
 }
+.project-amiga-paragraph {
+    padding: 2rem 4rem 2rem 4rem;
+}
+.wireframe {
+    float: right;
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+}
