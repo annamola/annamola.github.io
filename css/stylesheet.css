@@ -23,6 +23,7 @@ header {
     background-color: white;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.3);
 }
 
 .header-container {
@@ -163,6 +164,7 @@ header {
     opacity: 0;
     pointer-events: none;
     transition: 0.5s;
+    border: 1px solid tomato;
 }
 
 .dropdown-btn ul {
@@ -171,10 +173,10 @@ header {
 
 .dropdown-link > a {
     display: flex;
-    background-color: #e2e2e2;
+    background-color: white;
     color: rgb(22, 22, 22);
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    font-size: 1rem;
     align-items: center;
     justify-content: space-between;
     transition: 0.3s;
@@ -183,7 +185,7 @@ header {
     text-decoration: none;
 }
 .dropdown-link:hover > a {
-    background-color: #dddddd;
+    background-color: tomato;
     color: rgb(15, 15, 15);
     text-decoration: none;
 }
@@ -219,6 +221,9 @@ header {
     pointer-events: auto;
 }
 
+.swiper-pagination-bullet {
+    background-color: black !important;
+}
 /* burger */
 
 .hamburger-menu-container {
@@ -453,7 +458,6 @@ header {
     color: rgb(154, 154, 154);
     text-transform: lowercase;
     font-size: 7.2vh;
-    font-family: "Palanquin", sans-serif;
     position: absolute;
     z-index: 8;
     top: 40%;
@@ -467,7 +471,6 @@ header {
     text-transform: lowercase;
     text-decoration: underline;
     font-size: 7.2vh;
-    font-family: "Palanquin", sans-serif;
     position: absolute;
     z-index: 4;
     top: 50%;
@@ -486,7 +489,6 @@ footer {
     background-color: white;
     /* color: rgb(22, 22, 22); */
     /* font-size: 12px; */
-    /* font-family: "Palanquin", sans-serif; */
 }
 .fab {
     /* padding: 5px; */
@@ -540,7 +542,9 @@ footer {
 .websites a {
     text-decoration: underline;
 }
-
+.websites img {
+    box-shadow: 0px 6px 20px -3px rgba(0, 0, 0, 0.54);
+}
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -568,32 +572,25 @@ footer {
     display: flex;
     flex-direction: column;
 }
-.gallery-title {
-    font-size: 36px;
-    color: #db584e;
-    text-align: center;
-    font-weight: 700;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+
 .filter-button {
     font-size: 18px;
-    border: 1px solid #db584e;
+    border: 1px solid tomato;
     border-radius: 5px;
     text-align: center;
-    color: #db584e;
+    color: tomato;
     margin-bottom: 30px;
 }
 .filter-button:hover {
     font-size: 18px;
-    border: 1px solid #db584e;
+    border: 1px solid tomato;
     border-radius: 5px;
     text-align: center;
     color: #ffffff;
-    background-color: #db584e;
+    background-color: tomato;
 }
 .btn-default:active .filter-button:active {
-    background-color: #db584e;
+    background-color: tomato;
     color: white;
 }
 .port-image {
@@ -603,11 +600,11 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 2rem;
 }
 
 .photos {
     line-height: 0;
-
     -webkit-column-count: 5;
     -webkit-column-gap: 0px;
     -moz-column-count: 5;
@@ -690,9 +687,9 @@ footer {
 .about-1 svg {
     max-width: 7rem;
 }
-
+/* SVG color */
 path {
-    fill: #9b361d;
+    fill: tomato;
 }
 .column-1 h1 {
     text-align: center;
