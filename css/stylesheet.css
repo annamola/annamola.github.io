@@ -448,7 +448,14 @@ header {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+    /* .buttons {
+        width: 100vh !important;
+        margin-left: 5vh !important;
+    } */
+    .buttons button {
+        font-size: 12px;
+    }
 }
 
 .swiper-container {
