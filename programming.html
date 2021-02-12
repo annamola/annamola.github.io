@@ -248,6 +248,14 @@
             }
         </script>
         <script src="js/app.js"></script>
+        <div class="loader-wrapper">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <script>
+            $(window).on("load", function () {
+                $(".loader-wrapper").fadeOut("slow");
+            });
+        </script>
         <footer>
             <p>anna mola || </p>
             <p><a href="https://annamola.wixsite.com/portfolio"> old website</a></p>

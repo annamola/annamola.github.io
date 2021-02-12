@@ -812,6 +812,14 @@
                 <a href="https://annamola.wixsite.com/portfolio">old website</a>
             </p>
         </footer>
+        <div class="loader-wrapper">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <script>
+            $(window).on("load", function () {
+                $(".loader-wrapper").fadeOut("slow");
+            });
+        </script>
         <script>
             consoleText(["anna mola"], "text", ["black", "tomato"]);
 
