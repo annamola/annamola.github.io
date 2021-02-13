@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8" />
-        <title>Programming</title>
+        <title>Contact</title>
         <meta name="description" content="" />
         <meta
             name="viewport"
@@ -58,7 +58,7 @@
                 <input type="checkbox" name="" id="check" />
                 <div class="logo-container">
                     <div class="console-container">
-                        <a href="index.html"
+                        <a href="index"
                             ><span id="text"></span>
                             <div class="console-underscore" id="console">
                                 &#95;
@@ -70,7 +70,7 @@
                     <div class="nav-links">
                         <ul>
                             <li class="nav-link-custom" style="--i: 0.6s">
-                                <a href="about.html">About</a>
+                                <a href="about">About</a>
                             </li>
                             <li class="nav-link-custom" style="--i: 0.85s">
                                 <a href="#"
@@ -79,16 +79,16 @@
                                 <div class="dropdown-btn">
                                     <ul>
                                         <li class="dropdown-link">
-                                            <a href="art.html">Art</a>
+                                            <a href="art">Art</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="zine.html">Zine</a>
+                                            <a href="zine">Zine</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="websites.html">Websites</a>
+                                            <a href="websites">Websites</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="programming.html"
+                                            <a href="programming"
                                                 >Programming</a
                                             >
                                         </li>
@@ -96,7 +96,7 @@
                                 </div>
                             </li>
                             <li class="nav-link-custom" style="--i: 1s">
-                                <a href="contact.html">Contact</a>
+                                <a href="contact">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -120,14 +120,36 @@
                 </div>
             </div>
         </header>
-        <div class="pdf-embed">
-            <embed
-                src="https://drive.google.com/viewerng/
-viewer?embedded=true&url=https://github.com/annamola/annamola.github.io/raw/main/images/myZine.pdf"
-                width="100%"
-                height="100%"
-            />
-        </div>
+
+        <form
+            action="https://formspree.io/f/xrgodzpw"
+            method="POST"
+            class="contact-form"
+        >
+            <div>
+                <h2>Contact me:</h2>
+                <label>
+                    First Name
+                    <input type="text" name="first" />
+                </label>
+                <label>
+                    Last Name
+                    <input type="text" name="last" />
+                </label>
+                <label>
+                    Email
+                    <input type="text" name="_replyto" />
+                </label>
+                <label>
+                    Message
+                    <textarea name="message"></textarea>
+                </label>
+
+                <!-- your other form fields go here -->
+
+                <button type="submit">Send</button>
+            </div>
+        </form>
 
         <footer>
             <p>anna mola ||</p>

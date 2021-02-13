@@ -59,7 +59,7 @@
                 <input type="checkbox" name="" id="check" />
                 <div class="logo-container">
                     <div class="console-container">
-                        <a href="index.html"
+                        <a href="index"
                             ><span id="text"></span>
                             <div class="console-underscore" id="console">
                                 &#95;
@@ -71,7 +71,7 @@
                     <div class="nav-links">
                         <ul>
                             <li class="nav-link-custom" style="--i: 0.3s">
-                                <a href="about.html">About</a>
+                                <a href="about">About</a>
                             </li>
                             <li class="nav-link-custom" style="--i: 0.45s">
                                 <a href="#"
@@ -80,16 +80,16 @@
                                 <div class="dropdown-btn">
                                     <ul>
                                         <li class="dropdown-link">
-                                            <a href="art.html">Art</a>
+                                            <a href="art">Art</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="zine.html">Zine</a>
+                                            <a href="zine">Zine</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="websites.html">Websites</a>
+                                            <a href="websites">Websites</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="programming.html"
+                                            <a href="programming"
                                                 >Programming</a
                                             >
                                         </li>
@@ -97,7 +97,7 @@
                                 </div>
                             </li>
                             <li class="nav-link-custom" style="--i: 0.6s">
-                                <a href="contact.html">Contact</a>
+                                <a href="contact">Contact</a>
                             </li>
                         </ul>
                     </div>

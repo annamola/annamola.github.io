@@ -1,10 +1,6 @@
----
-permalink: /about/
----
 <!DOCTYPE html>
 <html class="no-js">
     <head>
-<!--         <a class="page-link" href="{{ page.url | remove: '.html' | prepend: site.baseurl }}">{{ page.title }}</a> -->
         <meta charset="utf-8" />
         <title>Art</title>
         <meta name="description" content="" />
@@ -56,7 +52,7 @@ permalink: /about/
                 <input type="checkbox" name="" id="check" />
                 <div class="logo-container">
                     <div class="console-container">
-                        <a href="index.html"
+                        <a href="home"
                             ><span id="text"></span>
                             <div class="console-underscore" id="console">
                                 &#95;
@@ -68,25 +64,25 @@ permalink: /about/
                     <div class="nav-links">
                         <ul>
                             <li class="nav-link-custom" style="--i: 0.6s">
-                                <a href="about.html">About</a>
+                                <a href="about">About</a>
                             </li>
                             <li class="nav-link-custom" style="--i: 0.85s">
-                                <a href="#"
+                                <a href=""
                                     >Portfolio<i class="fas fa-caret-down"></i
                                 ></a>
                                 <div class="dropdown-btn">
                                     <ul>
                                         <li class="dropdown-link">
-                                            <a href="art.html">Art</a>
+                                            <a href="art">Art</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="zine.html">Zine</a>
+                                            <a href="zine">Zine</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="websites.html">Websites</a>
+                                            <a href="websites">Websites</a>
                                         </li>
                                         <li class="dropdown-link">
-                                            <a href="programming.html"
+                                            <a href="programming"
                                                 >Programming</a
                                             >
                                         </li>
@@ -94,7 +90,7 @@ permalink: /about/
                                 </div>
                             </li>
                             <li class="nav-link-custom" style="--i: 1s">
-                                <a href="contact.html">Contact</a>
+                                <a href="contact">Contact</a>
                             </li>
                         </ul>
                     </div>
