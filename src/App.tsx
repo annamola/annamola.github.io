@@ -1,12 +1,12 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { HomePage } from "./HomePage/HomePage";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import HomePage from "./HomePage/HomePage";
 
-function App() {
+const App = (): JSX.Element => {
     return (
-        <Router>
-            <div>
+        <div>
+            <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
                         <div className="App">
@@ -19,9 +19,9 @@ function App() {
                     <Route path="/about"></Route>
                     <Route path="/dashboard"></Route>
                 </Switch>
-            </div>
-        </Router>
+            </BrowserRouter>
+        </div>
     );
-}
+};
 
 export default App;
