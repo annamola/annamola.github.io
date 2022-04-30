@@ -3,11 +3,8 @@ import React from "react";
 import "./Header.css";
 import AnimatedLogo from "../AnimatedLogo/AnimatedLogo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faGithubSquare,
-    faInstagramSquare,
-    faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithubSquare, faInstagramSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { Turn as Hamburger } from "hamburger-react";
 
 const useStyles = makeStyles({
     root: {
@@ -22,12 +19,13 @@ const useStyles = makeStyles({
     socialsContainer: {
         display: "flex",
         alignItems: "center",
+        justifyContent: "flex-end",
+        paddingRight: "2rem",
     },
     socials: {
         display: "flex",
         flex: 1,
         alignItems: "center",
-        justifyContent: "center",
         columnGap: "20px",
     },
     icon: {
@@ -43,6 +41,7 @@ const useStyles = makeStyles({
 
 const Header: React.FunctionComponent = () => {
     const classes = useStyles();
+    const [isOpen, setOpen] = React.useState(false);
     return (
         <Grid container className={classes.root}>
             <Grid item xs={9} sm={10} md={3}>
@@ -59,35 +58,23 @@ const Header: React.FunctionComponent = () => {
                     <p>contact</p>
                 </Grid>
             </Hidden>
-            <Grid
-                item
-                xs={3}
-                sm={2}
-                md={3}
-                className={classes.socialsContainer}
-            >
+            <Grid item xs={3} sm={2} md={3} className={classes.socialsContainer}>
                 <Hidden mdUp>
-                    <p>hamburger</p>
+                    <Hamburger rounded toggled={isOpen} toggle={setOpen} />
+                    <div className={`banner large ${isOpen ? "toggled" : ""} side-bar`}>
+                        WOAH!!!! NOT HIDDEN ANYMORE
+                    </div>
                 </Hidden>
                 <Hidden smDown>
                     <div className={classes.socials}>
                         <a href="https://www.instagram.com/moladesk/">
-                            <FontAwesomeIcon
-                                icon={faInstagramSquare}
-                                className={classes.icon}
-                            />
+                            <FontAwesomeIcon icon={faInstagramSquare} className={classes.icon} />
                         </a>
                         <a href="https://www.linkedin.com/in/anna-mola-b90581104/">
-                            <FontAwesomeIcon
-                                icon={faLinkedin}
-                                className={classes.icon}
-                            />
+                            <FontAwesomeIcon icon={faLinkedin} className={classes.icon} />
                         </a>
                         <a href="https://github.com/annamola/">
-                            <FontAwesomeIcon
-                                icon={faGithubSquare}
-                                className={classes.icon}
-                            />
+                            <FontAwesomeIcon icon={faGithubSquare} className={classes.icon} />
                         </a>
                     </div>
                 </Hidden>

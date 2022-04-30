@@ -75,7 +75,6 @@ header {
     display: none;
 }
 .console-container {
-    font-size: 2em;
     text-align: left;
     display: flex;
     color: black;

@@ -5,15 +5,15 @@
 }
 .logo {
     color: #fff;
-    font-size: 2rem;
+    /* font-size: 2rem; */
     font-weight: 800;
     text-decoration: none;
     text-transform: lowercase;
-    line-height: 3rem;
+    /* line-height: 3rem; */
     cursor: pointer;
 }
 
-.logo span {
+/* .logo span {
     font-weight: 300;
 }
 .logo-container a {
@@ -21,7 +21,6 @@
     text-decoration: none;
 }
 .console-container {
-    font-size: 2em;
     text-align: left;
     display: flex;
     color: black;
@@ -36,3 +35,22 @@
     position: relative;
     left: 10px;
 }
+.Typist .Cursor {
+    display: inline-block;
+}
+.Typist .Cursor--blinking {
+    opacity: 1;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
