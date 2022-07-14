@@ -1,27 +1,50 @@
-import React from "react"; // importing FunctionComponent
+import "./AnimatedLogo.css";
+import React from "react";
 import { Link } from "react-router-dom";
-import Typist from "react-typist";
 
 const AnimatedLogo: React.FunctionComponent = () => {
-    const [curText, setCurText] = React.useState("anna mola ");
+    const [typeText, setTypeText] = React.useState("");
+    const [typeIndex, setTypeIndex] = React.useState(0);
+    const [direction, setDirection] = React.useState(1);
+    const [underscore, setUnderscore] = React.useState(true);
 
     React.useEffect(() => {
-        console.log(`initializing interval`);
+        const name = "anna mola ";
+
         const interval = setInterval(() => {
-            setCurText("ab");
-        }, 1000);
+            setTypeIndex((prevTypeIndex) => prevTypeIndex + direction);
+
+            if (typeIndex === name.length - 1 && direction === 1) {
+                setDirection(-1);
+            } else if (typeIndex === 1 && direction === -1) setDirection(1);
+
+            if (direction === 1) setTypeText((prevTypeText) => prevTypeText + name[typeIndex]);
+            else setTypeText((prevTypeText) => prevTypeText.slice(0, -1));
+        }, 150);
 
         return () => {
-            console.log(`clearing interval`);
             clearInterval(interval);
         };
-    }, []); // has no dependency - this will be called on-component-mount
+    }, [typeIndex, typeText, direction]);
+
+    React.useEffect(() => {
+        const underscoreBlink = setInterval(() => {
+            setUnderscore((prevValue) => !prevValue);
+        }, 500);
+
+        return () => {
+            clearInterval(underscoreBlink);
+        };
+    }, [underscore]);
 
     return (
         <div className="logo-container">
             <div className="console-container">
                 <Link to="/">
-                    <p className="logo-text">{curText}</p>
+                    <p className="logo-text">{typeText}</p>
+                    <p className="logo-text" style={{ visibility: underscore ? "visible" : "hidden" }}>
+                        _
+                    </p>
                 </Link>
             </div>
         </div>
@@ -69,16 +92,6 @@ consoleText(["anna mola"], "text", ["black", "tomato"]);
                         letterCount += x;
                     }
                 }, 130);
-                window.setInterval(function () {
-                    if (visible === true) {
-                        con.className = "console-underscore hidden";
-                        visible = false;
-                    } else {
-                        con.className = "console-underscore";
-
-                        visible = true;
-                    }
-                }, 600);
             }
         </script> */
 

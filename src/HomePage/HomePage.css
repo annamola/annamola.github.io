@@ -47,37 +47,3 @@ header {
     position: relative;
     height: 5rem;
 }
-
-.logo-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-.logo {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 800;
-    text-decoration: none;
-    text-transform: lowercase;
-    line-height: 3rem;
-    cursor: pointer;
-}
-
-.logo span {
-    font-weight: 300;
-}
-.logo-container a {
-    color: rgb(22, 22, 22);
-    text-decoration: none;
-}
-
-.hidden {
-    display: none;
-}
-.console-container {
-    text-align: left;
-    display: flex;
-    color: black;
-    font-weight: 700;
-    white-space: nowrap;
-}
