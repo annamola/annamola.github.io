@@ -8,24 +8,32 @@ import { Turn as Hamburger } from "hamburger-react";
 
 const useStyles = makeStyles({
     root: {
-        backgroundColor: "white",
+        maxWidth: "65rem",
+        padding: " 0 2rem",
+        margin: " 0 auto",
+        position: "relative",
+        height: "5rem",
         display: "flex",
+        backgroundColor: "white",
+        zIndex: 1000,
         alignContent: "center",
     },
     menu: {
-        backgroundColor: "red",
         textAlign: "center",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "1.15rem",
     },
     socialsContainer: {
         display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        paddingRight: "2rem",
+        justifyContent: "center",
     },
     socials: {
         display: "flex",
         flex: 1,
         alignItems: "center",
+        justifyContent: "center",
         columnGap: "20px",
     },
     icon: {

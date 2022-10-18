@@ -1,6 +1,7 @@
-import React, { FunctionComponent } from "react"; // importing FunctionComponent
+import React, { FunctionComponent } from "react";
 import "./HomePage.css";
 import Header from "../Header/Header";
+import frame from "../assets/images/frame.webp";
 
 type HomePageProps = {
     title: string;
@@ -10,12 +11,13 @@ type HomePageProps = {
 const HomePage: FunctionComponent<HomePageProps> = ({ title, paragraph }) => {
     return (
         <div>
-            <header className="home-page-header">
+            <header>
                 <Header />
             </header>
             <div className="home-page-body">
                 <h2>{title}</h2>
                 <p>{paragraph}</p>
+                <img src={frame} alt="Logo"></img>
             </div>
         </div>
     );
