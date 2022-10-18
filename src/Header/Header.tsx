@@ -5,13 +5,12 @@ import AnimatedLogo from "../AnimatedLogo/AnimatedLogo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare, faInstagramSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Turn as Hamburger } from "hamburger-react";
-
+import { Link } from "react-router-dom";
 const useStyles = makeStyles({
     root: {
         maxWidth: "65rem",
-        padding: " 0 2rem",
-        margin: " 0 auto",
-        position: "relative",
+        padding: "0 2rem",
+        margin: "0 auto",
         height: "5rem",
         display: "flex",
         backgroundColor: "white",
@@ -25,7 +24,10 @@ const useStyles = makeStyles({
         alignItems: "center",
         fontSize: "1.15rem",
         cursor: "pointer",
-        "& p:after": {
+        "& a": {
+            color: "black",
+        },
+        "& a:after": {
             content: "''",
             display: "block",
             height: 2,
@@ -37,7 +39,7 @@ const useStyles = makeStyles({
             transform: "translate(-50%, 0)",
             marginTop: 2,
         },
-        "& p:hover:after": {
+        "& a:hover:after": {
             width: "100%",
             left: "50%",
             transform: "translate(-50%, 0)",
@@ -69,43 +71,45 @@ const Header: React.FunctionComponent = () => {
     const classes = useStyles();
     const [isOpen, setOpen] = React.useState(false);
     return (
-        <Grid container className={classes.root}>
-            <Grid item xs={9} sm={10} md={3}>
-                <AnimatedLogo></AnimatedLogo>
-            </Grid>
-            <Hidden smDown>
-                <Grid item sm={1} md={2} className={classes.menu}>
-                    <p>about</p>
+        <div className="header">
+            <Grid container className={classes.root}>
+                <Grid item xs={9} sm={10} md={3}>
+                    <AnimatedLogo></AnimatedLogo>
                 </Grid>
-                <Grid item sm={1} md={2} className={classes.menu}>
-                    <p>portfolio</p>
-                </Grid>
-                <Grid item sm={1} md={2} className={classes.menu}>
-                    <p>contact</p>
-                </Grid>
-            </Hidden>
-            <Grid item xs={3} sm={2} md={3} className={classes.socialsContainer}>
-                <Hidden mdUp>
-                    <Hamburger rounded toggled={isOpen} toggle={setOpen} />
-                    <div className={`banner large ${isOpen ? "toggled" : ""} side-bar`}>
-                        WOAH!!!! NOT HIDDEN ANYMORE
-                    </div>
-                </Hidden>
                 <Hidden smDown>
-                    <div className={classes.socials}>
-                        <a href="https://www.instagram.com/moladesk/">
-                            <FontAwesomeIcon icon={faInstagramSquare} className={classes.icon} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/anna-mola-b90581104/">
-                            <FontAwesomeIcon icon={faLinkedin} className={classes.icon} />
-                        </a>
-                        <a href="https://github.com/annamola/">
-                            <FontAwesomeIcon icon={faGithubSquare} className={classes.icon} />
-                        </a>
-                    </div>
+                    <Grid item sm={1} md={2} className={classes.menu}>
+                        <Link to="/about">about</Link>
+                    </Grid>
+                    <Grid item sm={1} md={2} className={classes.menu}>
+                        <Link to="/portfolio">portfolio</Link>
+                    </Grid>
+                    <Grid item sm={1} md={2} className={classes.menu}>
+                        <Link to="/contact">contact</Link>
+                    </Grid>
                 </Hidden>
+                <Grid item xs={3} sm={2} md={3} className={classes.socialsContainer}>
+                    <Hidden mdUp>
+                        <Hamburger rounded toggled={isOpen} toggle={setOpen} />
+                        <div className={`banner large ${isOpen ? "toggled" : ""} side-bar`}>
+                            WOAH!!!! NOT HIDDEN ANYMORE
+                        </div>
+                    </Hidden>
+                    <Hidden smDown>
+                        <div className={classes.socials}>
+                            <a href="https://www.instagram.com/bythemol/">
+                                <FontAwesomeIcon icon={faInstagramSquare} className={classes.icon} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/anna-mola-b90581104/">
+                                <FontAwesomeIcon icon={faLinkedin} className={classes.icon} />
+                            </a>
+                            <a href="https://github.com/annamola/">
+                                <FontAwesomeIcon icon={faGithubSquare} className={classes.icon} />
+                            </a>
+                        </div>
+                    </Hidden>
+                </Grid>
             </Grid>
-        </Grid>
+        </div>
     );
 };
 
