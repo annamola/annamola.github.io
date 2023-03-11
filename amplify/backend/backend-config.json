@@ -44,7 +44,7 @@
     }
   },
   "storage": {
-    "portfolioContentStorage": {
+    "s3d5b86d13": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3"

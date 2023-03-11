@@ -1,7 +1,7 @@
 {
-  "resourceName": "portfolioContentStorage",
-  "policyUUID": "d092b566",
-  "bucketName": "annamolaportfolio2074ad730da841859931a7e00fe03e",
+  "resourceName": "s3d5b86d13",
+  "policyUUID": "d5b86d13",
+  "bucketName": "annamolaportfolioc09a1d3a53ba49a6ac6805e3f5779d",
   "storageAccess": "auth",
   "guestAccess": [],
   "authAccess": [
