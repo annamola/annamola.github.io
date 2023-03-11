@@ -1,0 +1,14 @@
+{
+  "resourceName": "portfolioContentStorage",
+  "policyUUID": "d092b566",
+  "bucketName": "annamolaportfolio2074ad730da841859931a7e00fe03e",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

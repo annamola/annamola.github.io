@@ -8,7 +8,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme/theme";
 import "@aws-amplify/ui-react/styles.css";
 import { Amplify } from "aws-amplify";
-import { AmplifyProvider, Authenticator, Button, Flex, Image, Text, View } from "@aws-amplify/ui-react";
 import aws_exports from "./aws-exports";
 
 import "@aws-amplify/ui-react/styles.css";
