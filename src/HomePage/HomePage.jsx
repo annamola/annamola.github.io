@@ -29,7 +29,7 @@ const HomePage = ({ title, paragraph }) => {
                     </Grid>
                     <Grid item md={6}>
                         <p>{paragraph}</p>
-                        <P5Test />
+                        {/* <P5Test /> */}
                     </Grid>
                 </Grid>
                 <HeaderOffset />

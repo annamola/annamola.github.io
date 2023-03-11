@@ -11,7 +11,7 @@ const angle = 360 / symmetry;
 let saveButton, clearButton;
 let sizeSlider: any, brushSizeSlider;
 let bgImg: p5Types.Image;
-const P5Test: React.FC<ComponentProps> = (props: ComponentProps) => {
+const P5Test = (props: ComponentProps) => {
     const preload = (p5: p5Types) => {
         p5.loadImage(Dooley, (img) => {
             bgImg = img;
