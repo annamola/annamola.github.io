@@ -78,6 +78,6 @@ const P5Test = (props: ComponentProps) => {
         }
     };
 
-    return <Sketch setup={setup} draw={draw} preload={preload} />;
+    // return <Sketch setup={setup} draw={draw} preload={preload} />;
 };
 export default P5Test;
