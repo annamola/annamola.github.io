@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Grid, { GridProps } from "@mui/material/Grid";
 import Button, { ButtonProps } from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import React, { useLayoutEffect } from "react";
 import HeaderOffset from "./HeaderOffset";
 import "./Header.css";
@@ -23,20 +24,16 @@ const HeaderGrid = styled(Grid)<GridProps>(({ theme }) => ({
     alignContent: "center",
 }));
 const MenuGridItem = styled(Grid)<GridProps>(({ theme }) => ({
-    textAlign: "center",
     position: "relative",
     display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    fontSize: "1.15rem",
-    cursor: "pointer",
     "& > a": {
         color: "black",
     },
     "& > a:before": {
         content: "''",
-        marginTop: 5,
+        marginTop: 10,
         display: "block",
     },
     "& > a:after": {
@@ -50,7 +47,7 @@ const MenuGridItem = styled(Grid)<GridProps>(({ theme }) => ({
         left: "50%",
         transform: "translate(-50%, 0)",
         marginTop: 2,
-        marginBottom: 5,
+        marginBottom: 10,
     },
     "& > a:hover:after": {
         width: "100%",
@@ -61,17 +58,16 @@ const MenuGridItem = styled(Grid)<GridProps>(({ theme }) => ({
 const DropdownBtn = styled(Button)<ButtonProps>(({ theme }) => ({
     position: "absolute",
     top: 60,
-    right: 0,
-    width: "10rem",
+    left: 0,
+    width: "11rem",
     height: 40,
-    border: "2px solid" + COLORS.main,
+    border: "2px solid #D0E4DB",
     zIndex: 101,
-    borderRadius: 0,
+    backgroundColor: "white",
     "&:hover": {
-        backgroundColor: COLORS.main,
+        backgroundColor: "#D0E4DB",
     },
 }));
-
 const SideBarBtn = styled(Button)<ButtonProps>(({ theme }) => ({
     backgroundColor: "white",
     borderRadius: 0,
@@ -81,10 +77,7 @@ const SideBarBtn = styled(Button)<ButtonProps>(({ theme }) => ({
     justifyContent: "flex-start",
     paddingLeft: 40,
     color: "black",
-    fontFamily: "Roboto Slab",
     textTransform: "lowercase",
-    fontSize: 18,
-    fontWeight: 400,
     "&:hover": {
         backgroundColor: "rgb(20, 120, 74, 0.2)",
     },
@@ -105,20 +98,24 @@ const Header: React.FunctionComponent = () => {
         }
     }, [isOverButton, isOverList, listOpen]);
 
-    const dropdownOpts = ["art", "zine", "web design", "mobile app design"];
+    const dropdownOpts = ["art", "zine", "web design", "mobile app design", "this website"];
     return (
         <div className="header">
             <HeaderGrid container>
                 <Grid item xs={9} sm={10} md={3}>
-                    <AnimatedLogo />
+                    <Link to="/">
+                        <AnimatedLogo />
+                    </Link>
                 </Grid>
                 <Box sx={{ display: { xs: "none", md: "contents" } }}>
                     <MenuGridItem item sm={1} md={2}>
-                        <Link to="/about">about</Link>
+                        <Link to="/about">
+                            <Typography variant="h4">about</Typography>
+                        </Link>
                     </MenuGridItem>
                     <MenuGridItem item sm={1} md={2}>
                         <Link
-                            to="/"
+                            to={{}}
                             onMouseEnter={() => {
                                 setOverButton(true);
                             }}
@@ -126,8 +123,14 @@ const Header: React.FunctionComponent = () => {
                                 setOverButton(false);
                             }}
                         >
-                            <div style={{ display: "flex", flexDirection: "row" }}>
-                                portfolio
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    alignItems: "center",
+                                }}
+                            >
+                                <Typography variant="h4">portfolio</Typography>
                                 <FontAwesomeIcon icon={solid("caret-down")} style={{ marginLeft: 5 }} />
                             </div>
                         </Link>
@@ -141,9 +144,23 @@ const Header: React.FunctionComponent = () => {
                                 }}
                             >
                                 {dropdownOpts.map((title, i) => (
-                                    <Link to={"/" + title}>
-                                        <DropdownBtn key={i.toString() + title} sx={{ top: 60 + i * 40 }}>
-                                            <p className="dropdown-text">{title}</p>
+                                    <Link key={"dropdown_" + title} to={"/" + title.replace(/\s+/g, "-").toLowerCase()}>
+                                        <DropdownBtn
+                                            sx={{
+                                                top: 60 + i * 40,
+                                                borderBottomWidth: i !== dropdownOpts.length - 1 ? 0 : 2,
+                                                borderTopLeftRadius: i === 0 ? 5 : 0,
+                                                borderTopRightRadius: i === 0 ? 5 : 0,
+                                                borderBottomLeftRadius: i === dropdownOpts.length - 1 ? 5 : 0,
+                                                borderBottomRightRadius: i === dropdownOpts.length - 1 ? 5 : 0,
+                                            }}
+                                        >
+                                            <Typography
+                                                variant="h4"
+                                                style={{ textTransform: "lowercase", color: "black" }}
+                                            >
+                                                {title}
+                                            </Typography>
                                         </DropdownBtn>
                                     </Link>
                                 ))}
@@ -151,7 +168,9 @@ const Header: React.FunctionComponent = () => {
                         ) : null}
                     </MenuGridItem>
                     <MenuGridItem item sm={1} md={2}>
-                        <Link to="/contact">contact</Link>
+                        <Link to="/contact">
+                            <Typography variant="h4">contact</Typography>
+                        </Link>
                     </MenuGridItem>
                 </Box>
                 <Grid
@@ -162,12 +181,14 @@ const Header: React.FunctionComponent = () => {
                     sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
                 >
                     <Box sx={{ display: { xs: "flex", md: "none" } }}>
-                        <Hamburger rounded toggled={isOpen} toggle={setOpen} />
+                        <Hamburger rounded toggled={isOpen} toggle={setOpen} label="Show menu" />
                         <div className={`${isOpen ? "toggled" : ""} side-bar`}>
                             <div>
                                 <HeaderOffset />
                                 <Link to="/about">
-                                    <SideBarBtn>about</SideBarBtn>
+                                    <SideBarBtn>
+                                        <Typography variant="h4">about</Typography>
+                                    </SideBarBtn>
                                 </Link>
                                 <SideBarBtn
                                     onClick={() => {
@@ -188,24 +209,38 @@ const Header: React.FunctionComponent = () => {
                                             width: "100%",
                                         }}
                                     >
-                                        portfolio
-                                        <FontAwesomeIcon icon={solid("caret-down")} style={{ marginRight: 20 }} />
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                flexDirection: "row",
+                                                width: "100%",
+                                                justifyContent: "space-between",
+                                                alignItems: "center",
+                                            }}
+                                        >
+                                            <Typography variant="h4">portfolio</Typography>
+                                            <FontAwesomeIcon icon={solid("caret-down")} style={{ marginRight: 20 }} />
+                                        </div>
                                     </div>
                                 </SideBarBtn>
                                 {isSideBarDropdownOpen
                                     ? dropdownOpts.map((title, i) => (
-                                          <Link key={i.toString() + title} to={"/" + title}>
+                                          <Link
+                                              key={"sidebar_dropdown_" + title}
+                                              to={"/" + title.replace(/\s+/g, "-").toLowerCase()}
+                                          >
                                               <SideBarBtn
                                                   sx={{ paddingLeft: 10, backgroundColor: "rgb(20, 120, 74, 0.1)" }}
-                                                  key={i.toString() + title}
                                               >
-                                                  <p className="dropdown-text">{title}</p>
+                                                  <Typography variant="h4">{title}</Typography>
                                               </SideBarBtn>
                                           </Link>
                                       ))
                                     : null}
                                 <Link to="/contact">
-                                    <SideBarBtn>contact</SideBarBtn>
+                                    <SideBarBtn>
+                                        <Typography variant="h4">contact</Typography>
+                                    </SideBarBtn>
                                 </Link>
                             </div>
                             <div className="socials" style={{ alignItems: "flex-end", marginBottom: "2rem" }}>

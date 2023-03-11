@@ -3,9 +3,10 @@ import "./HomePage.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import frame from "../assets/images/frame.webp";
-import self from "../assets/images/IMG_2578asd.jpg";
+import self from "../assets/images/IMG_6972_crop.jpg";
 import HeaderOffset from "../Header/HeaderOffset";
 import { Grid } from "@mui/material";
+import P5Test from "../p5Test/p5Test";
 
 type HomePageProps = {
     title: string;
@@ -34,12 +35,14 @@ const HomePage: FunctionComponent<HomePageProps> = ({ title, paragraph }) => {
                     <Grid item md={6}>
                         <h2>{title}</h2>
                         <div className="frame-on-image">
-                            <img src={frame} alt="Frame" className="frame"></img>
-                            <img src={self} alt="Anna Mola" className="image"></img>
+                            <img src={frame} alt="Frame" className="frame" />
+                            <img src={self} alt="Anna Mola" className="image" />
+                            <div className="white-background "></div>
                         </div>
                     </Grid>
                     <Grid item md={6}>
                         <p>{paragraph}</p>
+                        <P5Test />
                     </Grid>
                 </Grid>
                 <HeaderOffset />

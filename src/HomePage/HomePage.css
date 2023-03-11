@@ -8,13 +8,24 @@
 .frame {
     position: absolute;
     height: inherit;
+    z-index: 3;
 }
 .frame-on-image {
     height: 300px;
+    width: 300px;
 }
 .image {
     height: inherit;
-    z-index: inherit;
+    position: absolute;
+    z-index: 2;
+    left: 38px;
+}
+.white-background {
+    position: relative;
+    height: inherit;
+    width: inherit;
+    z-index: 0;
+    background-color: #999680;
 }
 body {
     overflow-x: hidden;
