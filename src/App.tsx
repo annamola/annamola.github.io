@@ -6,9 +6,51 @@ import AboutPage from "./AboutPage/AboutPage";
 import ContactPage from "./ContactPage/ContactPage";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme/theme";
+import "@aws-amplify/ui-react/styles.css";
+import { Amplify } from "aws-amplify";
+import { AmplifyProvider, Authenticator, Button, Flex, Image, Text, View } from "@aws-amplify/ui-react";
+import aws_exports from "./aws-exports";
+
+import "@aws-amplify/ui-react/styles.css";
+
+Amplify.configure(aws_exports);
+
 const App = (): JSX.Element => {
     return (
         <div>
+            {/* optional login flow */}
+            {/* <AmplifyProvider>
+                <Authenticator>
+                    {({ signOut, user }) => (
+                        <Flex
+                            direction="column"
+                            justifyContent="flex-start"
+                            alignItems="center"
+                            alignContent="flex-start"
+                            wrap="nowrap"
+                            gap="1rem"
+                            textAlign="center"
+                        >
+                            <View width="100%"></View>
+
+                            {user && (
+                                <View width="100%">
+                                    <Text>Hello {user.username}</Text>
+                                    <Button onClick={signOut}>
+                                        <Text>Sign Out</Text>
+                                    </Button>
+                                </View>
+                            )}
+
+                            <View width="100%">
+                                <Text>
+                                    Edit <code>src/App.tsx</code> and save to reload.
+                                </Text>
+                            </View>
+                        </Flex>
+                    )}
+                </Authenticator>
+            </AmplifyProvider> */}
             <ThemeProvider theme={theme}>
                 <BrowserRouter>
                     <Routes>
