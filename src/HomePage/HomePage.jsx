@@ -3,13 +3,27 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import "./HomePage.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import frame from "../assets/images/frame.webp";
 import self from "../assets/images/IMG_6972_crop.jpg";
 import HeaderOffset from "../Header/HeaderOffset";
 import { Grid } from "@mui/material";
 import P5Test from "../p5Test/p5Test";
+import { Storage } from "aws-amplify";
 
 const HomePage = ({ title, paragraph }) => {
+    const [frame, setFrame] = useState();
+
+    useEffect(() => {
+        fetchFrame();
+    }, []);
+
+    async function fetchFrame() {
+        const frame = await Storage.get("assets/images/frame.webp", {
+            level: "public",
+        });
+        console.log(frame);
+        setFrame(frame);
+    }
+
     return (
         <div>
             <Header />
