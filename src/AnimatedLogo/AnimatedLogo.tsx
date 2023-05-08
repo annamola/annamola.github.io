@@ -46,7 +46,7 @@ const AnimatedLogo: React.FunctionComponent = () => {
             <p className="logo-text" style={{ color: color ? "black" : COLORS.main }}>
                 {typeText}
             </p>
-            <p className="logo-text" style={{ visibility: underscore ? "visible" : "hidden" }}>
+            <p className="logo-text" style={{ visibility: underscore ? "visible" : "hidden", color: COLORS.main }}>
                 _
             </p>
         </div>

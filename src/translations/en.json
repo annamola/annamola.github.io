@@ -1,0 +1,11 @@
+{
+    "HOME": {
+        "TITLE": "Hello Angular with ngx-translate!",
+        "SELECT": "Change language"
+    },
+    "ABOUT": {
+        "TITLE": "About Me",
+        "ABOUT_ME_PARAGRAPH": "Hi! I'm Anna and welcome to my portfolio website! I coded this site myself initally as a statically hosted website on GitHub pages so that I could teach myself more about HTML, CSS, Bootstrap, and JavaScript. This site is an ongoing process and is slightly adjusted every couple of weeks to my liking as I learn more about web design. \nNow more about me! I'm currently a junior studying Computer Science and Visual Arts at Emory University. I'm really interested in front-end development and UI design. I'm also incredibly passionate about art. I love filling out my sketchbooks as well forcing every friend I have to make art with me. I'm also a devout believer in daily naps, green tea with honey and lemon, and warm blankets.",
+        "ABOUT_ME_TEXT": "Whether you're here to peruse, stalk, or contemplate hiring, welcome and I'm glad you're here!"
+    }
+}
