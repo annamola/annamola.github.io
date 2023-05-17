@@ -44,7 +44,7 @@
     border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
     border-left: solid rgba(0, 0, 0, 0.75) 6px;
     border-radius: 5px;
-    animation: left-page-flip 1s linear forwards;
+    animation: left-page-flip 0.5s linear forwards;
 }
 
 .pdf-container-document-page-right {
@@ -71,7 +71,7 @@
     border-radius: 5px;
     transform: rotateY(-90deg);
     transform-origin: 0%;
-    animation: right-page-flip 1s linear backwards;
+    animation: right-page-flip 0.5s linear backwards;
 }
 .pdf-container-document-divider {
     height: 500px;

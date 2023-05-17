@@ -26,7 +26,8 @@ const ZinePage = ({ title, paragraph }) => {
         console.log("rightPage", rightPage);
     }, [pageNumber, leftPage, rightPage]);
 
-    const animationFlipTime = 1000;
+    const animationFlipTime = 500;
+
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
         // setPageArray(Array(numPages).fill(false));
@@ -48,14 +49,11 @@ const ZinePage = ({ title, paragraph }) => {
 
     const [nextPageFlip, setNextPageFlip] = useState(false);
     const [prevPageFlip, setPrevPageFlip] = useState(false);
-    const [nextPageFlipBehind, setNextPageFlipBehind] = useState(false);
-    const [prevPageFlipBehind, setPrevPageFlipBehind] = useState(false);
     const [rightPageFlip, toggleRightPageFlip] = useState(true);
     const [leftPageFlip, toggleLeftPageFlip] = useState(true);
 
     const toggleNextPage = () => {
         setNextPageFlip(true);
-        setNextPageFlipBehind(true);
         setTimeout(() => {
             toggleRightPageFlip(false);
         }, animationFlipTime / 2);
@@ -64,13 +62,9 @@ const ZinePage = ({ title, paragraph }) => {
             goToNextPage();
             toggleRightPageFlip(true);
         }, animationFlipTime);
-        setTimeout(() => {
-            setNextPageFlipBehind(false);
-        }, animationFlipTime + 2000);
     };
     const togglePrevPage = () => {
         setPrevPageFlip(true);
-        setPrevPageFlipBehind(true);
         setTimeout(() => {
             toggleLeftPageFlip(false);
         }, animationFlipTime / 2);
@@ -79,9 +73,6 @@ const ZinePage = ({ title, paragraph }) => {
             goToPrevPage();
             toggleLeftPageFlip(true);
         }, animationFlipTime);
-        setTimeout(() => {
-            setPrevPageFlipBehind(false);
-        }, animationFlipTime + 2000);
     };
 
     const blankPage = (
@@ -126,7 +117,7 @@ const ZinePage = ({ title, paragraph }) => {
                     <button onClick={toggleNextPage}>next page</button>
                 </div>
                 <div className="pdf-container">
-                    <div className="inner section-3">
+                    <div className="inner section-blank">
                         <Document
                             file={zinePdf}
                             className="pdf-container-document"
@@ -135,65 +126,20 @@ const ZinePage = ({ title, paragraph }) => {
                             noData={blankPage}
                             error={blankPage}
                         >
-                            {nextPageFlip ? (
-                                <>
-                                    <div className={`pdf-container-document-page-left`} onClick={togglePrevPage}>
-                                        <Page
-                                            pageNumber={rightPage + 1}
-                                            height={500}
-                                            loading={blankPage}
-                                            noData={blankPage}
-                                            error={blankPage}
-                                        />
-                                    </div>
-                                    {divider}
-                                    <div className={`pdf-container-document-page-right`} onClick={toggleNextPage}>
-                                        <Page
-                                            pageNumber={rightPage + 2}
-                                            height={500}
-                                            loading={blankPage}
-                                            noData={blankPage}
-                                            error={blankPage}
-                                        />
-                                    </div>
-                                </>
-                            ) : null}
+                            <>
+                                <div className={`pdf-container-document-page-left`} onClick={togglePrevPage}>
+                                    {blankPage}
+                                </div>
+                                {divider}
+                                <div className={`pdf-container-document-page-right`} onClick={toggleNextPage}>
+                                    {blankPage}
+                                </div>
+                            </>
                         </Document>
                     </div>
-                    <div className="inner section-2">
-                        <Document
-                            file={zinePdf}
-                            className="pdf-container-document"
-                            onLoadSuccess={onDocumentLoadSuccess}
-                            loading={blankPage}
-                            noData={blankPage}
-                            error={blankPage}
-                        >
-                            {prevPageFlip ? (
-                                <>
-                                    <div className={`pdf-container-document-page-left`} onClick={togglePrevPage}>
-                                        <Page
-                                            pageNumber={leftPage - 2}
-                                            height={500}
-                                            loading={blankPage}
-                                            noData={blankPage}
-                                            error={blankPage}
-                                        />
-                                    </div>
-                                    {divider}
-                                    <div className={`pdf-container-document-page-right`} onClick={toggleNextPage}>
-                                        <Page
-                                            pageNumber={leftPage - 1}
-                                            height={500}
-                                            loading={blankPage}
-                                            noData={blankPage}
-                                            error={blankPage}
-                                        />
-                                    </div>
-                                </>
-                            ) : null}
-                        </Document>
-                    </div>
+                    {/* {Array.from(new Array(numPages), (el, index) => (
+                        <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+                    ))} */}
                     <div className="inner section-1">
                         <Document
                             file={zinePdf}
@@ -213,6 +159,7 @@ const ZinePage = ({ title, paragraph }) => {
                                         loading={blankPage}
                                         noData={blankPage}
                                         error={blankPage}
+                                        canvasBackground="white"
                                     />
                                 </div>
                                 <div
@@ -227,6 +174,7 @@ const ZinePage = ({ title, paragraph }) => {
                                             loading={blankPage}
                                             noData={blankPage}
                                             error={blankPage}
+                                            canvasBackground="white"
                                         />
                                     )}
                                 </div>
@@ -247,6 +195,7 @@ const ZinePage = ({ title, paragraph }) => {
                                         loading={blankPage}
                                         noData={blankPage}
                                         error={blankPage}
+                                        canvasBackground="white"
                                     />
                                 </div>
                                 <div
@@ -260,6 +209,7 @@ const ZinePage = ({ title, paragraph }) => {
                                         loading={blankPage}
                                         noData={blankPage}
                                         error={blankPage}
+                                        canvasBackground="white"
                                     />
                                 </div>
                             </div>
