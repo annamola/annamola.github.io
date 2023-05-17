@@ -46,7 +46,6 @@ const HomePage = ({ title, paragraph }) => {
                         {/* <P5Test /> */}
                     </Grid>
                 </Grid>
-                <HeaderOffset />
             </div>
             <Footer />
         </div>

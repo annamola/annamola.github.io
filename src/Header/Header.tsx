@@ -57,9 +57,9 @@ const MenuGridItem = styled(Grid)<GridProps>(({ theme }) => ({
 }));
 const DropdownBtn = styled(Button)<ButtonProps>(({ theme }) => ({
     position: "absolute",
-    top: 60,
-    left: 0,
+    left: "50%",
     width: "11rem",
+    transform: "translate(-50%, 0)",
     height: 40,
     border: "2px solid #D0E4DB",
     zIndex: 101,

@@ -1,0 +1,177 @@
+.zine-page-body {
+    min-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(157, 181, 174);
+}
+.pdf-container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    place-items: center;
+    grid-template-areas: "inner-div";
+}
+.inner {
+    grid-area: inner-div;
+}
+.current {
+    display: flex;
+}
+.hidden {
+    display: none;
+}
+.pdf-container-document {
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 50px;
+}
+.pdf-container-document-page-left {
+    z-index: 2;
+    padding-right: 8px;
+    background-color: white;
+    border-top: solid rgba(0, 0, 0, 0.75) 5px;
+    border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
+    border-left: solid rgba(0, 0, 0, 0.75) 6px;
+    border-radius: 5px;
+}
+.pdf-container-document-page-left-flip {
+    padding-right: 8px;
+    background-color: white;
+    border-top: solid rgba(0, 0, 0, 0.75) 5px;
+    border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
+    border-left: solid rgba(0, 0, 0, 0.75) 6px;
+    border-radius: 5px;
+    animation: left-page-flip 1s linear forwards;
+}
+
+.pdf-container-document-page-right {
+    z-index: 2;
+    padding-left: 8px;
+    background-color: white;
+    border-top: solid rgba(0, 0, 0, 0.75) 5px;
+    border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
+    border-right: solid rgba(0, 0, 0, 0.75) 6px;
+    border-radius: 5px;
+}
+.pdf-container-document-page-left-back {
+    transform: rotateY(180deg);
+}
+.pdf-container-document-page-right-back {
+    transform: rotateY(180deg);
+}
+.pdf-container-document-page-right-flip {
+    padding-left: 8px;
+    background-color: white;
+    border-top: solid rgba(0, 0, 0, 0.75) 5px;
+    border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
+    border-right: solid rgba(0, 0, 0, 0.75) 6px;
+    border-radius: 5px;
+    transform: rotateY(-90deg);
+    transform-origin: 0%;
+    animation: right-page-flip 1s linear backwards;
+}
+.pdf-container-document-divider {
+    height: 500px;
+    width: 12px;
+    top: 8px;
+    position: relative;
+    z-index: 3;
+}
+.pdf-container-document-divider-ring {
+    position: relative;
+}
+.pdf-container-document-divider-ring-left {
+    position: absolute;
+    z-index: 1;
+    left: -8px;
+    height: 8px;
+    width: 6px;
+    border-radius: 1px;
+    background: linear-gradient(to right, gray, white);
+    border-left: solid rgba(0, 0, 0, 0.75) 1px;
+}
+.pdf-container-document-divider-ring-right {
+    position: absolute;
+    z-index: 1;
+    left: 14px;
+    height: 8px;
+    width: 6px;
+    border-radius: 1px;
+    background: linear-gradient(to left, gray, white);
+    border-right: solid rgba(0, 0, 0, 0.75) 1px;
+}
+.pdf-container-document-divider-ring-1 {
+    position: absolute;
+    z-index: 2;
+    height: 2px;
+    width: 18px;
+    left: -3px;
+    top: 1px;
+    background-color: rgb(23, 23, 23);
+}
+.pdf-container-document-divider-ring-2 {
+    position: absolute;
+    z-index: 2;
+    height: 2px;
+    width: 18px;
+    left: -3px;
+    top: 5px;
+    background-color: rgb(23, 23, 23);
+}
+@keyframes right-page-flip {
+    0% {
+        z-index: 2;
+        transform: perspective(3000px) rotateY(0deg);
+        transform-origin: 0%;
+    }
+    40% {
+        z-index: 2;
+        transform: perspective(3000px) rotateY(-72deg);
+        transform-origin: 0%;
+    }
+    50% {
+        z-index: 10;
+        transform: perspective(3000px) rotateY(-90deg) translateX(-20px);
+        transform-origin: 0%;
+    }
+    100% {
+        z-index: 10;
+        transform: perspective(3000px) rotateY(-180deg) translateX(10px);
+        transform-origin: 0%;
+    }
+}
+@keyframes left-page-flip {
+    0% {
+        z-index: 2;
+        transform: perspective(3000px) rotateY(0deg);
+        transform-origin: 100%;
+    }
+    20% {
+        z-index: 2;
+        transform: perspective(3000px) rotateY(36deg);
+        transform-origin: 100%;
+    }
+    30% {
+        z-index: 2;
+        transform: perspective(3000px) rotateY(54deg);
+        transform-origin: 100%;
+    }
+    40% {
+        z-index: 10;
+        transform: perspective(3000px) rotateY(72deg);
+        transform-origin: 100%;
+    }
+    50% {
+        z-index: 10;
+        transform: perspective(3000px) rotateY(90deg) translateX(20px);
+        transform-origin: 100%;
+    }
+    100% {
+        z-index: 10;
+        transform: perspective(3000px) rotateY(180deg) translateX(-10px);
+        transform-origin: 100%;
+    }
+}
