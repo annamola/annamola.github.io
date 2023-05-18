@@ -6,11 +6,11 @@ import Footer from "../Footer/Footer";
 import HeaderOffset from "../Header/HeaderOffset";
 import { Grid } from "@mui/material";
 import { Document, Page } from "react-pdf";
-import zinePdf from "../assets/pdfs/myZine.pdf";
 import { pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import deskBackground from "../assets/images/pexels-fwstudio-172296.jpg";
+import { Storage } from "aws-amplify";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.js", import.meta.url).toString();
 
@@ -19,18 +19,25 @@ const ZinePage = ({ title, paragraph }) => {
     const [pageNumber, setPageNumber] = useState(1);
     const [leftPage, setLeftPage] = useState(1);
     const [rightPage, setRightPage] = useState(2);
-    // const [pageArray, setPageArray] = useState([]);
+    const [pageArray, setPageArray] = useState();
+    const [zinePdf, setZinePdf] = useState();
+
+    async function fetchZinePdf() {
+        const zinePdf = await Storage.get("pdfs/myZine.pdf", {
+            level: "public",
+        });
+        setZinePdf(zinePdf);
+    }
 
     useEffect(() => {
-        console.log("leftPage", leftPage);
-        console.log("rightPage", rightPage);
-    }, [pageNumber, leftPage, rightPage]);
+        fetchZinePdf();
+    }, []);
 
     const animationFlipTime = 500;
 
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
-        // setPageArray(Array(numPages).fill(false));
+        setPageArray(Array(numPages).fill(false));
     }
 
     const goToPrevPage = () => {
@@ -79,9 +86,7 @@ const ZinePage = ({ title, paragraph }) => {
         <div
             className={`pdf-container-document-page-blank}`}
             style={{ height: 499, width: 386, backgroundColor: "lavender", zIndex: 10 }}
-        >
-            {/* <Page pageNumber={pageNumber - 2} height={500} /> */}
-        </div>
+        ></div>
     );
     const divider = (
         <div className="pdf-container-document-divider">
@@ -102,142 +107,87 @@ const ZinePage = ({ title, paragraph }) => {
         </div>
     );
 
+    function innerPageSection(index) {
+        return (
+            <div className={`inner section-${index} ${index + 1 === leftPage ? "" : "hidden"}`}>
+                <Document
+                    file={zinePdf}
+                    className="pdf-container-document"
+                    onLoadSuccess={onDocumentLoadSuccess}
+                    loading={blankPage}
+                    noData={blankPage}
+                    error={blankPage}
+                >
+                    <>
+                        <div
+                            className={`pdf-container-document-page-left${prevPageFlip ? "-flip" : ""}`}
+                            onClick={index !== 0 ? togglePrevPage : undefined}
+                        >
+                            <div className={`pdf-container-document-page-left-front ${leftPageFlip ? "" : "hidden"}`}>
+                                <Page pageNumber={index + 1} height={500} />
+                            </div>
+                            <div className={`pdf-container-document-page-left-back ${leftPageFlip ? "hidden" : ""}`}>
+                                {index + 1 < 1 ? blankPage : <Page pageNumber={index} height={500} />}
+                            </div>
+                        </div>
+                        {divider}
+                        <div
+                            className={`pdf-container-document-page-right${nextPageFlip ? "-flip" : ""}`}
+                            onClick={index !== numPages - 2 ? toggleNextPage : undefined}
+                        >
+                            <div className={`pdf-container-document-page-right-front ${rightPageFlip ? "" : "hidden"}`}>
+                                <Page pageNumber={index + 2} height={500} />
+                            </div>
+                            <div className={`pdf-container-document-page-right-back ${rightPageFlip ? "hidden" : ""}`}>
+                                <Page pageNumber={index + 3} height={500} />
+                            </div>
+                        </div>
+                    </>
+                </Document>
+            </div>
+        );
+    }
+
     return (
         <div>
             <Header />
             <div className="zine-page-body">
                 <img
                     src={deskBackground}
+                    alt="Wood texture background"
                     style={{ position: "absolute", width: "100vw", height: "100%", objectFit: "cover" }}
                 ></img>
                 <h2>{title}</h2>
-                <div style={{ display: "flex", zIndex: 10, justifyContent: "center" }}>
-                    {pageNumber}
-                    <button onClick={togglePrevPage}>prev page</button>
-                    <button onClick={toggleNextPage}>next page</button>
-                </div>
-                {/* {Array.from(new Array(numPages), (el, index) => (
-                        <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-                    ))} */}
-                <div className="pdf-container">
-                    <div className="inner section-blank">
-                        <Document
-                            file={zinePdf}
-                            className="pdf-container-document"
-                            onLoadSuccess={onDocumentLoadSuccess}
-                            loading={blankPage}
-                            noData={blankPage}
-                            error={blankPage}
-                        >
-                            <>
-                                <div className={`pdf-container-document-page-left`} onClick={togglePrevPage}>
-                                    {blankPage}
-                                </div>
-                                {divider}
-                                <div className={`pdf-container-document-page-right`} onClick={toggleNextPage}>
-                                    {blankPage}
-                                </div>
-                            </>
-                        </Document>
+                <div style={{ display: "flex", zIndex: 10, justifyContent: "center", alignItems: "center" }}>
+                    {/* {pageNumber} */}
+                    <button onClick={togglePrevPage}>{"<"}</button>
+                    <div className="pdf-container">
+                        <div className={`inner section-background ${prevPageFlip || nextPageFlip ? "" : "hidden"}`}>
+                            <Document
+                                file={zinePdf}
+                                className="pdf-container-document"
+                                onLoadSuccess={onDocumentLoadSuccess}
+                            >
+                                <>
+                                    <div className={`pdf-container-document-page-left`} onClick={togglePrevPage}>
+                                        {leftPage - 2 < 1 ? blankPage : <Page pageNumber={leftPage - 2} height={500} />}
+                                    </div>
+                                    {divider}
+                                    <div className={`pdf-container-document-page-right`} onClick={toggleNextPage}>
+                                        {rightPage + 2 > 10 ? (
+                                            blankPage
+                                        ) : (
+                                            <Page pageNumber={rightPage + 2} height={500} />
+                                        )}
+                                    </div>
+                                </>
+                            </Document>
+                        </div>
+                        {Array.from(new Array(numPages), (el, index) =>
+                            index % 2 === 0 ? innerPageSection(index) : null
+                        )}
                     </div>
-
-                    <div className="inner section-1">
-                        <Document
-                            file={zinePdf}
-                            className="pdf-container-document"
-                            onLoadSuccess={onDocumentLoadSuccess}
-                        >
-                            <div
-                                className={`pdf-container-document-page-left${prevPageFlip ? "-flip" : ""}`}
-                                onClick={togglePrevPage}
-                            >
-                                <div
-                                    className={`pdf-container-document-page-left-front ${leftPageFlip ? "" : "hidden"}`}
-                                >
-                                    <Page
-                                        pageNumber={leftPage}
-                                        height={500}
-                                        loading={blankPage}
-                                        noData={blankPage}
-                                        error={blankPage}
-                                        canvasBackground="white"
-                                    />
-                                </div>
-                                <div
-                                    className={`pdf-container-document-page-left-back ${leftPageFlip ? "hidden" : ""}`}
-                                >
-                                    {leftPage < 1 ? (
-                                        blankPage
-                                    ) : (
-                                        <Page
-                                            pageNumber={leftPage - 1}
-                                            height={500}
-                                            loading={blankPage}
-                                            noData={blankPage}
-                                            error={blankPage}
-                                            canvasBackground="white"
-                                        />
-                                    )}
-                                </div>
-                            </div>
-                            {divider}
-                            <div
-                                className={`pdf-container-document-page-right${nextPageFlip ? "-flip" : ""}`}
-                                onClick={toggleNextPage}
-                            >
-                                <div
-                                    className={`pdf-container-document-page-right-front ${
-                                        rightPageFlip ? "" : "hidden"
-                                    }`}
-                                >
-                                    <Page
-                                        pageNumber={rightPage}
-                                        height={500}
-                                        loading={blankPage}
-                                        noData={blankPage}
-                                        error={blankPage}
-                                        canvasBackground="white"
-                                    />
-                                </div>
-                                <div
-                                    className={`pdf-container-document-page-right-back ${
-                                        rightPageFlip ? "hidden" : ""
-                                    }`}
-                                >
-                                    <Page
-                                        pageNumber={rightPage + 1}
-                                        height={500}
-                                        loading={blankPage}
-                                        noData={blankPage}
-                                        error={blankPage}
-                                        canvasBackground="white"
-                                    />
-                                </div>
-                            </div>
-                        </Document>
-                    </div>
-
-                    {/* <div className="inner front-page current">
-                        <Document
-                            file={zinePdf}
-                            onLoadSuccess={onDocumentLoadSuccess}
-                            className="pdf-container-document"
-                        >
-                            {pageNumber === 0 ? blankPage : null}
-                            {divider}
-                            <div
-                                className={`pdf-container-document-page-right${nextPageFlip ? "-flip" : ""}`}
-                                onClick={toggleNextPage}
-                            >
-                                <div className={"pdf-container-document-page-right-front"}>
-                                    <Page pageNumber={1} height={500} />
-                                </div>
-                                <div className={"pdf-container-document-page-right-back"}>
-                                    <Page pageNumber={2} height={500} />
-                                </div>
-                            </div>
-                        </Document>
-                    </div> */}
+                    <button onClick={toggleNextPage}>{">"}</button>
                 </div>
             </div>
             <Footer />
