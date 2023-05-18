@@ -116,6 +116,9 @@ const ZinePage = ({ title, paragraph }) => {
                     <button onClick={togglePrevPage}>prev page</button>
                     <button onClick={toggleNextPage}>next page</button>
                 </div>
+                {/* {Array.from(new Array(numPages), (el, index) => (
+                        <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+                    ))} */}
                 <div className="pdf-container">
                     <div className="inner section-blank">
                         <Document
@@ -137,9 +140,7 @@ const ZinePage = ({ title, paragraph }) => {
                             </>
                         </Document>
                     </div>
-                    {/* {Array.from(new Array(numPages), (el, index) => (
-                        <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-                    ))} */}
+
                     <div className="inner section-1">
                         <Document
                             file={zinePdf}

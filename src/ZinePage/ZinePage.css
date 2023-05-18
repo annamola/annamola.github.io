@@ -32,17 +32,17 @@
     z-index: 2;
     padding-right: 8px;
     background-color: white;
-    border-top: solid rgba(0, 0, 0, 0.75) 5px;
-    border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
-    border-left: solid rgba(0, 0, 0, 0.75) 6px;
+    border-top: groove rgba(0, 0, 0, 0.75) 5px;
+    border-bottom: ridge rgba(0, 0, 0, 0.75) 6px;
+    border-left: groove rgba(0, 0, 0, 0.75) 6px;
     border-radius: 5px;
 }
 .pdf-container-document-page-left-flip {
     padding-right: 8px;
     background-color: white;
-    border-top: solid rgba(0, 0, 0, 0.75) 5px;
-    border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
-    border-left: solid rgba(0, 0, 0, 0.75) 6px;
+    border-top: groove rgba(0, 0, 0, 0.75) 5px;
+    border-bottom: ridge rgba(0, 0, 0, 0.75) 6px;
+    border-left: groove rgba(0, 0, 0, 0.75) 6px;
     border-radius: 5px;
     animation: left-page-flip 0.5s linear forwards;
 }
@@ -51,9 +51,9 @@
     z-index: 2;
     padding-left: 8px;
     background-color: white;
-    border-top: solid rgba(0, 0, 0, 0.75) 5px;
-    border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
-    border-right: solid rgba(0, 0, 0, 0.75) 6px;
+    border-top: groove rgba(0, 0, 0, 0.75) 5px;
+    border-bottom: ridge rgba(0, 0, 0, 0.75) 6px;
+    border-right: ridge rgba(0, 0, 0, 0.75) 6px;
     border-radius: 5px;
 }
 .pdf-container-document-page-left-back {
@@ -65,9 +65,9 @@
 .pdf-container-document-page-right-flip {
     padding-left: 8px;
     background-color: white;
-    border-top: solid rgba(0, 0, 0, 0.75) 5px;
-    border-bottom: solid rgba(0, 0, 0, 0.75) 6px;
-    border-right: solid rgba(0, 0, 0, 0.75) 6px;
+    border-top: groove rgba(0, 0, 0, 0.75) 5px;
+    border-bottom: groove rgba(0, 0, 0, 0.75) 6px;
+    border-right: groove rgba(0, 0, 0, 0.75) 6px;
     border-radius: 5px;
     transform: rotateY(-90deg);
     transform-origin: 0%;
