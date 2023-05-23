@@ -4,8 +4,7 @@ import "./ZinePage.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HeaderOffset from "../Header/HeaderOffset";
-import { Document, Page } from "react-pdf";
-import { pdfjs } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf/dist/esm/entry.webpack";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import deskBackground from "../assets/images/pexels-fwstudio-172296.jpg";
@@ -13,7 +12,11 @@ import { Storage } from "aws-amplify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.js", import.meta.url).toString();
+const url = `//cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = url;
+
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.js", import.meta.url).toString();
+
 // https://codepen.io/diemoritat/pen/LKROYZ?editors=1100
 // inspired by this code pen
 
@@ -28,6 +31,7 @@ const ZinePage = ({ title, paragraph }) => {
         const zinePdf = await Storage.get("pdfs/myZine.pdf", {
             level: "public",
         });
+        console.log(zinePdf);
         setZinePdf(zinePdf);
     }
 
@@ -100,7 +104,7 @@ const ZinePage = ({ title, paragraph }) => {
                 .map((_, i) => (
                     <div
                         className="pdf-container-document-divider-ring"
-                        key={i}
+                        key={`$page_${i}`}
                         style={{ marginTop: i * 20, top: i * 20 }}
                     >
                         <div className="pdf-container-document-divider-ring-left" />
