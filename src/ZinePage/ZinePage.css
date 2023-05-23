@@ -4,8 +4,31 @@
     flex-direction: column;
     background-color: rgb(157, 181, 174);
 }
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+.button {
+    background-color: rgb(255 255 255 / 40%);
+    border: none;
+    color: #000000;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 35px;
+    margin: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+.button:hover {
+    background-color: rgb(255 255 255 / 65%);
+    transition: background-color 0.3s ease-in-out;
+}
 .pdf-container {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     align-items: center;
     justify-content: center;
     display: grid;
@@ -25,7 +48,7 @@
     display: flex;
     flex-direction: row;
     border-radius: 5px;
-    padding: 5px;
+    /* padding: 5px; */
     margin-bottom: 50px;
 }
 .pdf-container-document-page-left {
@@ -35,6 +58,7 @@
     border-top: groove rgba(0, 0, 0, 0.75) 5px;
     border-bottom: ridge rgba(0, 0, 0, 0.75) 6px;
     border-left: groove rgba(0, 0, 0, 0.75) 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     border-radius: 5px;
 }
 .pdf-container-document-page-left-flip {
@@ -44,6 +68,7 @@
     border-bottom: ridge rgba(0, 0, 0, 0.75) 6px;
     border-left: groove rgba(0, 0, 0, 0.75) 6px;
     border-radius: 5px;
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
     animation: left-page-flip 0.5s linear forwards;
 }
 
@@ -55,12 +80,7 @@
     border-bottom: ridge rgba(0, 0, 0, 0.75) 6px;
     border-right: ridge rgba(0, 0, 0, 0.75) 6px;
     border-radius: 5px;
-}
-.pdf-container-document-page-left-back {
-    transform: rotateY(180deg);
-}
-.pdf-container-document-page-right-back {
-    transform: rotateY(180deg);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .pdf-container-document-page-right-flip {
     padding-left: 8px;
@@ -69,10 +89,18 @@
     border-bottom: groove rgba(0, 0, 0, 0.75) 6px;
     border-right: groove rgba(0, 0, 0, 0.75) 6px;
     border-radius: 5px;
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
     transform: rotateY(-90deg);
     transform-origin: 0%;
     animation: right-page-flip 0.5s linear backwards;
 }
+.pdf-container-document-page-left-back {
+    transform: rotateY(180deg);
+}
+.pdf-container-document-page-right-back {
+    transform: rotateY(180deg);
+}
+
 .pdf-container-document-divider {
     height: 500px;
     width: 12px;

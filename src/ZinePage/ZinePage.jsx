@@ -1,25 +1,27 @@
 // @ts-nocheck
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ZinePage.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HeaderOffset from "../Header/HeaderOffset";
-import { Grid } from "@mui/material";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import deskBackground from "../assets/images/pexels-fwstudio-172296.jpg";
 import { Storage } from "aws-amplify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.js", import.meta.url).toString();
+// https://codepen.io/diemoritat/pen/LKROYZ?editors=1100
+// inspired by this code pen
 
 const ZinePage = ({ title, paragraph }) => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const [leftPage, setLeftPage] = useState(1);
     const [rightPage, setRightPage] = useState(2);
-    const [pageArray, setPageArray] = useState();
     const [zinePdf, setZinePdf] = useState();
 
     async function fetchZinePdf() {
@@ -37,7 +39,6 @@ const ZinePage = ({ title, paragraph }) => {
 
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
-        setPageArray(Array(numPages).fill(false));
     }
 
     const goToPrevPage = () => {
@@ -60,26 +61,30 @@ const ZinePage = ({ title, paragraph }) => {
     const [leftPageFlip, toggleLeftPageFlip] = useState(true);
 
     const toggleNextPage = () => {
-        setNextPageFlip(true);
-        setTimeout(() => {
-            toggleRightPageFlip(false);
-        }, animationFlipTime / 2);
-        setTimeout(() => {
-            setNextPageFlip(false);
-            goToNextPage();
-            toggleRightPageFlip(true);
-        }, animationFlipTime);
+        if (rightPage < 10) {
+            setNextPageFlip(true);
+            setTimeout(() => {
+                toggleRightPageFlip(false);
+            }, animationFlipTime / 2);
+            setTimeout(() => {
+                setNextPageFlip(false);
+                goToNextPage();
+                toggleRightPageFlip(true);
+            }, animationFlipTime);
+        }
     };
     const togglePrevPage = () => {
-        setPrevPageFlip(true);
-        setTimeout(() => {
-            toggleLeftPageFlip(false);
-        }, animationFlipTime / 2);
-        setTimeout(() => {
-            setPrevPageFlip(false);
-            goToPrevPage();
-            toggleLeftPageFlip(true);
-        }, animationFlipTime);
+        if (leftPage > 1) {
+            setPrevPageFlip(true);
+            setTimeout(() => {
+                toggleLeftPageFlip(false);
+            }, animationFlipTime / 2);
+            setTimeout(() => {
+                setPrevPageFlip(false);
+                goToPrevPage();
+                toggleLeftPageFlip(true);
+            }, animationFlipTime);
+        }
     };
 
     const blankPage = (
@@ -151,16 +156,15 @@ const ZinePage = ({ title, paragraph }) => {
     return (
         <div>
             <Header />
+            <HeaderOffset />
             <div className="zine-page-body">
-                <img
-                    src={deskBackground}
-                    alt="Wood texture background"
-                    style={{ position: "absolute", width: "100vw", height: "100%", objectFit: "cover" }}
-                ></img>
+                <img src={deskBackground} alt="Wood texture background" className="background"></img>
                 <h2>{title}</h2>
                 <div style={{ display: "flex", zIndex: 10, justifyContent: "center", alignItems: "center" }}>
                     {/* {pageNumber} */}
-                    <button onClick={togglePrevPage}>{"<"}</button>
+                    <button className="button" onClick={togglePrevPage}>
+                        <FontAwesomeIcon size="lg" icon={solid("chevron-left")} />
+                    </button>
                     <div className="pdf-container">
                         <div className={`inner section-background ${prevPageFlip || nextPageFlip ? "" : "hidden"}`}>
                             <Document
@@ -187,7 +191,9 @@ const ZinePage = ({ title, paragraph }) => {
                             index % 2 === 0 ? innerPageSection(index) : null
                         )}
                     </div>
-                    <button onClick={toggleNextPage}>{">"}</button>
+                    <button className="button" onClick={toggleNextPage}>
+                        <FontAwesomeIcon size="lg" icon={solid("chevron-right")} />
+                    </button>
                 </div>
             </div>
             <Footer />
