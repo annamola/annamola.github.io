@@ -11,16 +11,16 @@ import deskBackground from "../assets/images/pexels-fwstudio-172296.jpg";
 import { Storage } from "aws-amplify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 
 const url = `//cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 pdfjs.GlobalWorkerOptions.workerSrc = url;
-
-// pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.js", import.meta.url).toString();
 
 // https://codepen.io/diemoritat/pen/LKROYZ?editors=1100
 // inspired by this code pen
 
 const ZinePage = ({ title, paragraph }) => {
+    const [isLoading, setLoading] = useState(true);
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const [leftPage, setLeftPage] = useState(1);
@@ -31,7 +31,6 @@ const ZinePage = ({ title, paragraph }) => {
         const zinePdf = await Storage.get("pdfs/myZine.pdf", {
             level: "public",
         });
-        console.log(zinePdf);
         setZinePdf(zinePdf);
     }
 
@@ -43,6 +42,8 @@ const ZinePage = ({ title, paragraph }) => {
 
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
+        setPageNumber(1);
+        setLoading(false);
     }
 
     const goToPrevPage = () => {
@@ -164,8 +165,25 @@ const ZinePage = ({ title, paragraph }) => {
             <div className="zine-page-body">
                 <img src={deskBackground} alt="Wood texture background" className="background"></img>
                 <h2>{title}</h2>
+                {isLoading === true ? (
+                    <LoadingAnimation
+                        bgImage={
+                            <img
+                                src={deskBackground}
+                                alt="Wood texture background"
+                                className="background"
+                                style={{
+                                    zIndex: -1,
+                                    height: "100vh",
+                                    top: 0,
+                                    left: 0,
+                                }}
+                            ></img>
+                        }
+                    ></LoadingAnimation>
+                ) : null}
+
                 <div style={{ display: "flex", zIndex: 10, justifyContent: "center", alignItems: "center" }}>
-                    {/* {pageNumber} */}
                     <button className="button" onClick={togglePrevPage}>
                         <FontAwesomeIcon size="lg" icon={solid("chevron-left")} />
                     </button>

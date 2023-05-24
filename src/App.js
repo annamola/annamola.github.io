@@ -11,6 +11,7 @@ import { Amplify } from "aws-amplify";
 import aws_exports from "./aws-exports";
 import en from "./translations/en.json";
 import ZinePage from "./ZinePage/ZinePage";
+import ArtPage from "./ArtPage/ArtPage";
 
 Amplify.configure(aws_exports);
 
@@ -22,7 +23,7 @@ const App = () => {
                     <Route path="/" element={<HomePage title="Welcome!" paragraph="To this example" />} />
                     <Route path="/about" element={<AboutPage title={en.ABOUT.TITLE} />} />
                     <Route path="/contact" element={<ContactPage title="Contact" paragraph="..." />} />
-                    <Route path="/art" element={<ContactPage title="art" paragraph="..." />} />
+                    <Route path="/art" element={<ArtPage title="art" paragraph="..." />} />
                     <Route path="/zine" element={<ZinePage title="zine" paragraph="..." />} />
                     <Route path="/web-design" element={<ContactPage title="web" paragraph="..." />} />
                     <Route path="/mobile-app-design" element={<ContactPage title="mobile" paragraph="..." />} />
