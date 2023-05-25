@@ -163,6 +163,43 @@
             animation-timing-function: linear;
         }
     }
+    .teapot-steam {
+        &-1 {
+            position: absolute;
+            left: 712px;
+            top: 357px;
+            z-index: 3;
+            mix-blend-mode: lighten;
+        }
+        &-2 {
+            position: absolute;
+            left: 717px;
+            top: 361px;
+            z-index: 3;
+            mix-blend-mode: lighten;
+        }
+        &-3 {
+            position: absolute;
+            left: 723px;
+            top: 420px;
+            z-index: 3;
+            mix-blend-mode: lighten;
+        }
+        &-4 {
+            position: absolute;
+            left: 724px;
+            top: 427px;
+            z-index: 3;
+            mix-blend-mode: lighten;
+        }
+        &-5 {
+            position: absolute;
+            left: 718px;
+            top: 419px;
+            z-index: 3;
+            mix-blend-mode: lighten;
+        }
+    }
 }
 
 .white-background {
