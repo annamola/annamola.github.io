@@ -1,0 +1,187 @@
+.home-page-body {
+    min-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(157, 181, 174); */
+
+    &-visual {
+        align-items: center;
+        justify-content: start;
+        display: grid;
+        /* place-items: center; */
+        grid-template-areas: "inner-div";
+        justify-items: center;
+    }
+}
+.inner {
+    grid-area: inner-div;
+}
+.frame {
+    position: absolute;
+    height: inherit;
+    z-index: 3;
+}
+.frame-on-image {
+    height: 300px;
+    width: 300px;
+}
+
+.image-container {
+    height: 642px;
+    position: relative;
+    .teapot-container {
+        position: absolute;
+        z-index: 2;
+        height: 193px;
+        width: 367px;
+        top: 455px;
+        left: 367px;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+        &:hover {
+            transform: scale(1.01);
+            transition: transform 0.5s ease-in-out;
+        }
+        .teapot-crop {
+            height: 193px;
+            width: 367px;
+            object-fit: cover;
+            object-position: left top;
+        }
+    }
+
+    .image {
+        height: inherit;
+        position: absolute;
+        z-index: 2;
+        left: 38px;
+        height: 100%;
+        width: 700px;
+        top: 5px;
+        object-fit: cover;
+        object-position: 100% 0;
+    }
+    @keyframes squiggle {
+        0% {
+            stroke-dashoffset: 186;
+            transform: translate(0, 0);
+        }
+        100% {
+            stroke-dashoffset: 355;
+            transform: translate((43px), (-43px));
+        }
+    }
+
+    .tea-steam-1 {
+        position: absolute;
+        left: 377px;
+        top: 220px;
+        z-index: 3;
+        transform: rotate(127deg) scale(0.8);
+        mix-blend-mode: lighten;
+        svg {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+
+            fill: none;
+            stroke: rgb(30, 192, 116);
+            stroke-miterlimit: 10;
+            stroke-width: 8;
+            stroke-linecap: round;
+
+            stroke-dasharray: 190;
+            stroke-dashoffset: 186;
+
+            transform: translate(0, 0);
+
+            animation-duration: 10s;
+            animation-name: squiggle;
+            animation-iteration-count: infinite;
+            animation-direction: linear;
+            animation-timing-function: linear;
+        }
+    }
+    .tea-steam-2 {
+        position: absolute;
+        left: 424px;
+        top: 225px;
+        z-index: 3;
+        transform: rotate(141deg);
+        mix-blend-mode: lighten;
+
+        svg {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+
+            fill: none;
+            stroke: rgb(30, 192, 116);
+            stroke-miterlimit: 1;
+            stroke-width: 8;
+            stroke-linecap: round;
+
+            stroke-dasharray: 190;
+            stroke-dashoffset: 186;
+
+            transform: translate(0, 0);
+
+            animation-duration: 7s;
+            animation-name: squiggle;
+            animation-iteration-count: infinite;
+            animation-direction: linear;
+            animation-timing-function: linear;
+        }
+    }
+    .tea-steam-3 {
+        position: absolute;
+        left: 453px;
+        top: 255px;
+        z-index: 3;
+        transform: rotate(160deg) scale(0.87);
+        mix-blend-mode: lighten;
+        svg {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+
+            fill: none;
+            stroke: rgb(30, 192, 116);
+            stroke-miterlimit: 10;
+            stroke-width: 8;
+            stroke-linecap: round;
+
+            stroke-dasharray: 190;
+            stroke-dashoffset: 186;
+
+            transform: translate(0, 0);
+
+            animation-duration: 5s;
+            animation-name: squiggle;
+            animation-iteration-count: infinite;
+            animation-direction: linear;
+            animation-timing-function: linear;
+        }
+    }
+}
+
+.white-background {
+    position: relative;
+    height: inherit;
+    width: inherit;
+    z-index: 0;
+    background-color: #999680;
+}
+body {
+    overflow-x: hidden;
+    font-family: "Roboto Slab", serif;
+}
+body.stop-transitions * {
+    transition: none !important;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}

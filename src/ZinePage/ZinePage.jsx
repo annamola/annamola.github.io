@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
-import "./ZinePage.css";
+import "./ZinePage.scss";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HeaderOffset from "../Header/HeaderOffset";
