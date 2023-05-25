@@ -5,16 +5,16 @@
     /* background-color: rgb(157, 181, 174); */
 
     &-visual {
-        align-items: center;
-        justify-content: start;
         display: grid;
-        /* place-items: center; */
         grid-template-areas: "inner-div";
-        justify-items: center;
     }
 }
 .inner {
     grid-area: inner-div;
+    h1 {
+        position: absolute;
+        z-index: 5;
+    }
 }
 .frame {
     position: absolute;

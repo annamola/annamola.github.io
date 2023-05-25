@@ -165,23 +165,7 @@ const ZinePage = ({ title, paragraph }) => {
             <div className="zine-page-body">
                 <img src={deskBackground} alt="Wood texture background" className="background"></img>
                 <h2>{title}</h2>
-                {isLoading === true ? (
-                    <LoadingAnimation
-                        bgImage={
-                            <img
-                                src={deskBackground}
-                                alt="Wood texture background"
-                                className="background"
-                                style={{
-                                    zIndex: -1,
-                                    height: "100vh",
-                                    top: 0,
-                                    left: 0,
-                                }}
-                            ></img>
-                        }
-                    ></LoadingAnimation>
-                ) : null}
+                {isLoading === true ? <LoadingAnimation></LoadingAnimation> : null}
 
                 <div style={{ display: "flex", zIndex: 10, justifyContent: "center", alignItems: "center" }}>
                     <button className="button" onClick={togglePrevPage}>

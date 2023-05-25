@@ -11,6 +11,8 @@ import HeaderOffset from "../Header/HeaderOffset";
 import { Grid } from "@mui/material";
 import { Storage } from "aws-amplify";
 
+//https://codepen.io/brettsnaidero/pen/aBmmop
+
 const HomePage = ({ title, paragraph }) => {
     const [frame, setFrame] = useState();
 
@@ -105,10 +107,12 @@ const HomePage = ({ title, paragraph }) => {
                                     strokeWidth={0}
                                     id="teapot-steam-1"
                                 />
-                                {Array(20)
+                                {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="" cy="" r="3" fill="#529fd9">
+                                        <circle key={`dot_${i}`} cx="0" cy="180" r="3" fill="#529fd9">
+                                            <set begin={`${i / 2}s`} attributeName="cx" to="0" />
+                                            <set begin={`${i / 2}s`} attributeName="cy" to="0" />
                                             <animateMotion begin={`${i / 2}s`} dur="10s" repeatCount="indefinite">
                                                 <mpath xlinkHref="#teapot-steam-1"></mpath>
                                             </animateMotion>
@@ -126,7 +130,7 @@ const HomePage = ({ title, paragraph }) => {
                                 overflow={"visible"}
                             >
                                 <path
-                                    d="M190.116 10.2529C189.046 10.146 188.287 9.56244 187.472 8.89519C184.828 6.73205 181.948 5.72011 178.682 4.82208C176.982 4.35456 176.04 3.82577 174.681 2.82125C173.489 1.94018 170.573 2.53542 169.178 2.53542C159.09 2.53542 150.804 9.55607 146.776 18.5063C144.408 23.7695 153.457 30.297 153.457 35.8349C153.457 42.9223 150.587 43.7443 145.597 47.6255C138.918 52.8203 129.787 56.6937 121.301 57.1652C113.755 57.5844 103.95 55.8954 98.6491 50.1265C95.7975 47.0233 88.7871 45.1243 84.7862 43.8382C79.7718 42.2265 70.8949 46.986 68.8868 51.4485C67.8361 53.7833 65.5687 57.2978 66.2785 59.8449C67.6092 64.6197 69.8557 68.0051 71.7808 72.4215C75.0147 79.8404 71.9936 86.1345 66.2428 91.0006C61.8716 94.6993 52.1969 92.856 47.9138 90.3575C44.0284 88.091 36.8633 86.9396 33.8365 91.1435C31.0114 95.0673 28.6915 99.0476 28.6915 104.113C28.6915 106.928 30.5447 108.689 30.6209 111.509C30.6993 114.409 29.9237 117.252 28.1913 119.584C25.2584 123.532 21.1654 125.895 17.7942 129.266C14.4832 132.577 11.9678 136.098 9.39784 140.021C6.74642 144.068 6.82535 146.712 6.82535 151.454C6.82535 153.434 7.12446 155.726 6.68243 157.671C6.24219 159.608 4.25784 164.601 2.32349 165.246"
+                                    d="M5.5 169C5.83333 160.5 7.5 142.6 11.5 139C16.5 134.5 29.5 126 33 116.5C36.5 107 27.5 103 33 93C37.4 85 48.1667 89.6667 53 93C57 95.5 66.8 98.1 74 88.5C81.2 78.9 74.3333 72.1667 70 70C68.3333 63.3333 66.8 49.9 74 49.5C83 49 80 43.5 98 49.5C116 55.5 124.5 64.5 142 54C156 45.6 154.833 35.4999 152.5 31.4999C146.833 27.9999 140.445 14.2114 161.5 5.00001C177.5 -1.9999 185 4.49996 194.5 11.4999"
                                     stroke="black"
                                     strokeWidth={0}
                                     id="teapot-steam-2"
@@ -134,14 +138,10 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="" cy="" r="4" fill="#529fd9">
-                                            <animateMotion
-                                                begin={`${i / 3}s`}
-                                                dur="10s"
-                                                repeatCount="indefinite"
-                                                keyPoints="1;0"
-                                                keyTimes="0;1"
-                                            >
+                                        <circle key={`dot_${i}`} cx="0" cy="175" r="4" fill="#529fd9">
+                                            <set begin={`${i / 3}s`} attributeName="cx" to="0" />
+                                            <set begin={`${i / 3}s`} attributeName="cy" to="0" />
+                                            <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
                                                 <mpath xlinkHref="#teapot-steam-2"></mpath>
                                             </animateMotion>
                                         </circle>
@@ -166,7 +166,9 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="" cy="" r="5" fill="#529fd9">
+                                        <circle key={`dot_${i}`} cx="-2" cy="1115" r="5" fill="#529fd9">
+                                            <set begin={`${i / 2}s`} attributeName="cx" to="0" />
+                                            <set begin={`${i / 2}s`} attributeName="cy" to="0" />
                                             <animateMotion begin={`${i / 2}s`} dur="10s" repeatCount="indefinite">
                                                 <mpath xlinkHref="#teapot-steam-3"></mpath>
                                             </animateMotion>
@@ -192,7 +194,9 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="" cy="" r="2" fill="#529fd9">
+                                        <circle key={`dot_${i}`} cx="-2" cy="114" r="2" fill="#529fd9">
+                                            <set begin={`${i / 3}s`} attributeName="cx" to="0" />
+                                            <set begin={`${i / 3}s`} attributeName="cy" to="0" />
                                             <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
                                                 <mpath xlinkHref="#teapot-steam-4"></mpath>
                                             </animateMotion>
@@ -219,7 +223,9 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="" cy="" r="2.5" fill="#529fd9">
+                                        <circle key={`dot_${i}`} cx="-2" cy="124" r="2.5" fill="#529fd9">
+                                            <set begin={`${i / 3}s`} attributeName="cx" to="0" />
+                                            <set begin={`${i / 3}s`} attributeName="cy" to="0" />
                                             <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
                                                 <mpath xlinkHref="#teapot-steam-5"></mpath>
                                             </animateMotion>
