@@ -26,14 +26,27 @@ const HomePage = ({ title, paragraph }) => {
         });
         setFrame(frame);
     }
-
+    const greenGradient = [
+        "#1EC074",
+        "#2BC67D",
+        "#37CB86",
+        "#44D18F",
+        "#50D798",
+        "#5DDDA1",
+        "#69E2A9",
+        "#76E8B2",
+        "#82EEBB",
+        "#8FF4C4",
+        "#9BF9CD",
+        "#A8FFD6",
+    ];
     return (
         <div>
             <Header />
             <div className="home-page-body">
                 <HeaderOffset />
-                {/* <h2>{title}</h2>
-                <div className="frame-on-image">
+                {/* <h2>{title}</h2> */}
+                {/* <div className="frame-on-image">
                     <img src={frame} alt="Frame" className="frame" />
                     <img src={self} alt="Anna Mola" className="image" />
                     <div className="white-background "></div>
@@ -41,11 +54,10 @@ const HomePage = ({ title, paragraph }) => {
                 <div className="home-page-body-visual">
                     <div className="inner image-container">
                         <img src={selfNoBg} alt="Anna Mola" className="image self" />
-                        {/* <img src={teapot} alt="teapot" className="image teapot" /> */}
                         <div className="teapot-container">
                             <img src={teapotCrop} alt="teapot" className="teapot-crop" />
                         </div>
-
+                        <h1>Welcome!</h1>
                         <div className="tea-steam-1">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -110,10 +122,21 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="0" cy="180" r="3" fill="#529fd9">
+                                        <circle
+                                            key={`dot_${i}`}
+                                            cx="0"
+                                            cy="180"
+                                            r="3"
+                                            fill={greenGradient[Math.floor(i / 2)]}
+                                        >
                                             <set begin={`${i / 2}s`} attributeName="cx" to="0" />
                                             <set begin={`${i / 2}s`} attributeName="cy" to="0" />
-                                            <animateMotion begin={`${i / 2}s`} dur="10s" repeatCount="indefinite">
+                                            <animateMotion
+                                                begin={`${i / 2}s`}
+                                                dur="10s"
+                                                repeatCount="indefinite"
+                                                calcMode={"discrete"}
+                                            >
                                                 <mpath xlinkHref="#teapot-steam-1"></mpath>
                                             </animateMotion>
                                         </circle>
@@ -138,7 +161,13 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="0" cy="175" r="4" fill="#529fd9">
+                                        <circle
+                                            key={`dot_${i}`}
+                                            cx="0"
+                                            cy="175"
+                                            r="4"
+                                            fill={greenGradient[Math.floor(i / 3)]}
+                                        >
                                             <set begin={`${i / 3}s`} attributeName="cx" to="0" />
                                             <set begin={`${i / 3}s`} attributeName="cy" to="0" />
                                             <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
@@ -166,7 +195,13 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="-2" cy="1115" r="5" fill="#529fd9">
+                                        <circle
+                                            key={`dot_${i}`}
+                                            cx="-2"
+                                            cy="1115"
+                                            r="5"
+                                            fill={greenGradient[Math.floor(i / 2)]}
+                                        >
                                             <set begin={`${i / 2}s`} attributeName="cx" to="0" />
                                             <set begin={`${i / 2}s`} attributeName="cy" to="0" />
                                             <animateMotion begin={`${i / 2}s`} dur="10s" repeatCount="indefinite">
@@ -194,7 +229,13 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="-2" cy="114" r="2" fill="#529fd9">
+                                        <circle
+                                            key={`dot_${i}`}
+                                            cx="-2"
+                                            cy="114"
+                                            r="2"
+                                            fill={greenGradient[Math.floor(i / 3)]}
+                                        >
                                             <set begin={`${i / 3}s`} attributeName="cx" to="0" />
                                             <set begin={`${i / 3}s`} attributeName="cy" to="0" />
                                             <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
@@ -223,7 +264,13 @@ const HomePage = ({ title, paragraph }) => {
                                 {Array(30)
                                     .fill(0)
                                     .map((_, i) => (
-                                        <circle key={`dot_${i}`} cx="-2" cy="124" r="2.5" fill="#529fd9">
+                                        <circle
+                                            key={`dot_${i}`}
+                                            cx="-2"
+                                            cy="124"
+                                            r="2.5"
+                                            fill={greenGradient[Math.floor(i / 3)]}
+                                        >
                                             <set begin={`${i / 3}s`} attributeName="cx" to="0" />
                                             <set begin={`${i / 3}s`} attributeName="cy" to="0" />
                                             <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
@@ -233,9 +280,6 @@ const HomePage = ({ title, paragraph }) => {
                                     ))}
                             </svg>
                         </div>
-                    </div>
-                    <div className="inner">
-                        <h1>Welcome!</h1>
                     </div>
                 </div>
             </div>
