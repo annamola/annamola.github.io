@@ -1,7 +1,7 @@
 $main-content-height: calc(100vh - 7rem);
 
 .home-page-body {
-    min-height: calc(100vh - 5rem);
+    min-height: calc(100vh - 2rem);
     display: flex;
     flex-direction: column;
     &-visual {
@@ -23,11 +23,48 @@ $main-content-height: calc(100vh - 7rem);
 }
 
 .image-container {
-    height: $main-content-height;
+    height: 642px;
     position: relative;
     width: 963px;
+    .option-1 {
+        position: absolute;
+        top: 183px;
+        left: 491px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        p {
+            margin-left: 10px;
+        }
+    }
+    .option-2 {
+        position: absolute;
+        top: 213px;
+        left: 491px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        p {
+            margin-left: 10px;
+        }
+    }
     h1 {
         position: absolute;
+        top: 54px;
+        left: 440px;
+        font-size: 60px;
+    }
+
+    .background-circle {
+        position: absolute;
+        top: -136px;
+        left: 258px;
+        z-index: -4;
+        svg {
+            width: 419px;
+            height: 419px;
+            overflow: visible;
+        }
     }
     .teapot-container {
         position: absolute;
@@ -51,7 +88,7 @@ $main-content-height: calc(100vh - 7rem);
     }
     .image {
         position: absolute;
-        z-index: 2;
+        z-index: -1;
         left: 38px;
         height: 100%;
         width: 700px;
@@ -167,35 +204,30 @@ $main-content-height: calc(100vh - 7rem);
             left: 712px;
             top: 357px;
             z-index: 3;
-            mix-blend-mode: lighten;
         }
         &-2 {
             position: absolute;
             left: 717px;
             top: 361px;
             z-index: 3;
-            mix-blend-mode: lighten;
         }
         &-3 {
             position: absolute;
             left: 723px;
             top: 420px;
             z-index: 3;
-            mix-blend-mode: lighten;
         }
         &-4 {
             position: absolute;
             left: 724px;
             top: 427px;
             z-index: 3;
-            mix-blend-mode: lighten;
         }
         &-5 {
             position: absolute;
             left: 718px;
             top: 419px;
             z-index: 3;
-            mix-blend-mode: lighten;
         }
     }
 }

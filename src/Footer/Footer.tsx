@@ -19,7 +19,7 @@ const Footer: React.FunctionComponent = () => {
                 }
                 alt="Animated GIF of a flame"
             ></img>
-            by anna mola || 2022
+            by anna mola || 2023
         </div>
     );
 };
