@@ -8,7 +8,7 @@ import useBreakpoints from "../../hooks/useBreakpoints";
 import SendIcon from "@mui/icons-material/Send";
 import { PageProps } from "../../types/PageProps.type";
 
-const ContactPage: React.FunctionComponent<PageProps> = ({ title, paragraph }) => {
+const ContactPage: React.FC<PageProps> = ({ title, paragraph }) => {
     const { isMobile, isSm } = useBreakpoints();
 
     return (
