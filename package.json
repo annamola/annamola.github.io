@@ -32,6 +32,8 @@
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
         "build": "react-scripts build",
+        "webpack-dev": "webpack serve --mode development",
+        "webpack-build": "webpack --mode production",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
@@ -66,6 +68,7 @@
         "prettier": "^2.7.1",
         "source-map-loader": "^3.0.1",
         "tailwindcss": "^3.3.2",
-        "typescript": "^4.9.5"
+        "typescript": "^4.9.5",
+        "webpack-cli": "^5.1.4"
     }
 }

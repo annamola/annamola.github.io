@@ -1,17 +1,13 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage/HomePage";
-import AboutPage from "./AboutPage/AboutPage";
-import ContactPage from "./ContactPage/ContactPage";
+import { HomePage, AboutPage, ContactPage, ArtPage, ZinePage } from "./pages/index";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme/theme";
 import "@aws-amplify/ui-react/styles.css";
 import { Amplify } from "aws-amplify";
 import aws_exports from "./aws-exports";
 import en from "./translations/en.json";
-import ZinePage from "./ZinePage/ZinePage";
-import ArtPage from "./ArtPage/ArtPage";
 
 Amplify.configure(aws_exports);
 

@@ -1,11 +1,29 @@
-module: {
-    loaders: [
-        // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-        { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
-    ],
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-    preLoaders: [
-        // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-        { test: /\.js$/, loader: "source-map-loader" }
-    ],
-}
+module.exports = {
+    output: {
+        path: path.join(__dirname, "/dist"),
+        filename: "index.bundle.js",
+    },
+    devServer: {
+        port: 3000,
+        hot: true,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /nodeModules/,
+                use: {
+                    loader: "babel-loader",
+                },
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"],
+            },
+        ],
+    },
+    plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+};
