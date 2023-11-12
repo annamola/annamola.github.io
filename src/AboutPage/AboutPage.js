@@ -12,11 +12,11 @@ const AboutPage = ({ title }) => {
             <div>
                 <HeaderOffset />
             </div>
-            <Grid container>
+            <Grid container sx={{ minHeight: "calc(100vh - 7rem)" }}>
                 <Grid item md={6}>
                     <h2>{title}</h2>
                     <div className="frame-on-image">
-                        <div className="white-background "></div>
+                        <div className="white-background ">asdasd</div>
                     </div>
                 </Grid>
                 <Grid item md={6}>
