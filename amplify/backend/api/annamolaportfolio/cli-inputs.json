@@ -6,8 +6,8 @@
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 365,
-      "apiKeyExpirationDate": "2024-11-11T04:49:43.157Z",
-      "keyDescription": ""
+      "apiKeyExpirationDate": "2024-11-11T05:02:49.933Z",
+      "keyDescription": "graphQL-API"
     },
     "conflictResolution": {},
     "additionalAuthTypes": []

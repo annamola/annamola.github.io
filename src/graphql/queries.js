@@ -10,6 +10,7 @@ export const getNote = /* GraphQL */ `
       image
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -27,8 +28,10 @@ export const listNotes = /* GraphQL */ `
         image
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
