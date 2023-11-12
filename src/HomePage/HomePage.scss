@@ -1,35 +1,83 @@
 $main-content-height: calc(100vh - 7rem);
+$breakpoint-teapot-steam: 784px;
+$breakpoint-mobile: 480px;
 
 .home-page-body {
-    min-height: calc(100vh - 2rem);
+    // min-height: calc(100vh - 2rem);
     display: flex;
     flex-direction: column;
     &-visual {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        position: relative;
+        @media (max-width: $breakpoint-teapot-steam) {
+            overflow-x: clip;
+        }
+
+        overflow-y: clip;
+        max-width: 90vh;
     }
-}
-.frame {
-    position: absolute;
-    height: inherit;
-    z-index: 3;
-}
-.frame-on-image {
-    height: 300px;
-    width: 300px;
 }
 
 .image-container {
-    height: 642px;
+    height: 624px;
     position: relative;
-    width: 963px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @media (max-width: $breakpoint-mobile) {
+        height: 400px;
+    }
+    .image {
+        position: absolute;
+        left: 0;
+        z-index: 0;
+        height: 624px;
+        object-fit: cover;
+        object-position: 100% 0;
+        @media (max-width: $breakpoint-mobile) {
+            height: 366px;
+        }
+    }
+
+    .teapot-container {
+        position: absolute;
+        left: 241px;
+        top: 356px;
+        z-index: 6;
+        height: 193px;
+        width: 367px;
+        @media (max-width: $breakpoint-teapot-steam) and (min-width: $breakpoint-mobile) {
+            left: 104px;
+        }
+        @media (max-width: $breakpoint-mobile) {
+            height: 185px;
+            width: 219px;
+            left: 135px;
+            top: 212px;
+        }
+        // object-fit: cover;
+        // transition: transform 0.5s ease-in-out;
+        // &:hover {
+        //     transform: scale(1.01);
+        //     transition: transform 0.5s ease-in-out;
+        // }
+        .teapot-crop {
+            height: 260px;
+            width: 367px;
+            object-fit: cover;
+            object-position: left top;
+            @media (max-width: $breakpoint-mobile) {
+                height: 185px;
+                width: 219px;
+            }
+        }
+    }
+
     .option-1 {
         position: absolute;
+        height: 2rem;
+        z-index: 10;
         top: 183px;
-        left: 491px;
+        right: 130px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -39,8 +87,10 @@ $main-content-height: calc(100vh - 7rem);
     }
     .option-2 {
         position: absolute;
+        z-index: 10;
+        height: 2rem;
         top: 213px;
-        left: 491px;
+        right: 145px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -51,7 +101,7 @@ $main-content-height: calc(100vh - 7rem);
     h1 {
         position: absolute;
         top: 54px;
-        left: 440px;
+        right: 20px;
         font-size: 60px;
     }
 
@@ -66,36 +116,7 @@ $main-content-height: calc(100vh - 7rem);
             overflow: visible;
         }
     }
-    .teapot-container {
-        position: absolute;
-        z-index: 6;
-        height: 193px;
-        width: 367px;
-        top: 455px;
-        left: 367px;
-        object-fit: cover;
-        transition: transform 0.5s ease-in-out;
-        &:hover {
-            transform: scale(1.01);
-            transition: transform 0.5s ease-in-out;
-        }
-        .teapot-crop {
-            height: 193px;
-            width: 367px;
-            object-fit: cover;
-            object-position: left top;
-        }
-    }
-    .image {
-        position: absolute;
-        z-index: -1;
-        left: 38px;
-        height: 100%;
-        width: 700px;
-        top: 5px;
-        object-fit: cover;
-        object-position: 100% 0;
-    }
+
     @keyframes squiggle {
         0% {
             stroke-dashoffset: 186;
@@ -106,128 +127,129 @@ $main-content-height: calc(100vh - 7rem);
             transform: translate((43px), (-43px));
         }
     }
-
-    .tea-steam-1 {
+    .tea-steam {
         position: absolute;
-        left: 377px;
-        top: 220px;
+        left: -96px;
+        top: -57px;
         z-index: 3;
-        transform: rotate(127deg) scale(0.8);
         mix-blend-mode: lighten;
-        svg {
+        &-1 {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            left: 377px;
+            top: 220px;
+            transform: rotate(127deg) scale(0.8);
+            svg {
+                position: absolute;
+                width: 100px;
+                height: 100px;
 
-            fill: none;
-            stroke: rgb(30, 192, 116);
-            stroke-miterlimit: 10;
-            stroke-width: 8;
-            stroke-linecap: round;
+                fill: none;
+                stroke: rgb(30, 192, 116);
+                stroke-miterlimit: 10;
+                stroke-width: 8;
+                stroke-linecap: round;
 
-            stroke-dasharray: 190;
-            stroke-dashoffset: 186;
+                stroke-dasharray: 190;
+                stroke-dashoffset: 186;
 
-            transform: translate(0, 0);
+                transform: translate(0, 0);
 
-            animation-duration: 10s;
-            animation-name: squiggle;
-            animation-iteration-count: infinite;
-            animation-direction: linear;
-            animation-timing-function: linear;
+                animation-duration: 10s;
+                animation-name: squiggle;
+                animation-iteration-count: infinite;
+                animation-direction: linear;
+                animation-timing-function: linear;
+            }
         }
-    }
-    .tea-steam-2 {
-        position: absolute;
-        left: 424px;
-        top: 225px;
-        z-index: 3;
-        transform: rotate(141deg);
-        mix-blend-mode: lighten;
-
-        svg {
+        &-2 {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            left: 424px;
+            top: 225px;
+            transform: rotate(141deg);
+            svg {
+                position: absolute;
+                width: 100px;
+                height: 100px;
 
-            fill: none;
-            stroke: rgb(30, 192, 116);
-            stroke-miterlimit: 1;
-            stroke-width: 8;
-            stroke-linecap: round;
+                fill: none;
+                stroke: rgb(30, 192, 116);
+                stroke-miterlimit: 1;
+                stroke-width: 8;
+                stroke-linecap: round;
 
-            stroke-dasharray: 190;
-            stroke-dashoffset: 186;
+                stroke-dasharray: 190;
+                stroke-dashoffset: 186;
 
-            transform: translate(0, 0);
+                transform: translate(0, 0);
 
-            animation-duration: 7s;
-            animation-name: squiggle;
-            animation-iteration-count: infinite;
-            animation-direction: linear;
-            animation-timing-function: linear;
+                animation-duration: 7s;
+                animation-name: squiggle;
+                animation-iteration-count: infinite;
+                animation-direction: linear;
+                animation-timing-function: linear;
+            }
         }
-    }
-    .tea-steam-3 {
-        position: absolute;
-        left: 453px;
-        top: 255px;
-        z-index: 3;
-        transform: rotate(160deg) scale(0.87);
-        mix-blend-mode: lighten;
-        svg {
+        &-3 {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            left: 453px;
+            top: 255px;
+            transform: rotate(160deg) scale(0.87);
+            svg {
+                position: absolute;
+                width: 100px;
+                height: 100px;
 
-            fill: none;
-            stroke: rgb(30, 192, 116);
-            stroke-miterlimit: 10;
-            stroke-width: 8;
-            stroke-linecap: round;
+                fill: none;
+                stroke: rgb(30, 192, 116);
+                stroke-miterlimit: 10;
+                stroke-width: 8;
+                stroke-linecap: round;
 
-            stroke-dasharray: 190;
-            stroke-dashoffset: 186;
+                stroke-dasharray: 190;
+                stroke-dashoffset: 186;
 
-            transform: translate(0, 0);
+                transform: translate(0, 0);
 
-            animation-duration: 5s;
-            animation-name: squiggle;
-            animation-iteration-count: infinite;
-            animation-direction: linear;
-            animation-timing-function: linear;
+                animation-duration: 5s;
+                animation-name: squiggle;
+                animation-iteration-count: infinite;
+                animation-direction: linear;
+                animation-timing-function: linear;
+            }
         }
     }
     .teapot-steam {
+        position: absolute;
+        left: -127px;
+        top: -95px;
+        @media (max-width: $breakpoint-teapot-steam) {
+            left: -260px;
+        }
+        z-index: 3;
         &-1 {
             position: absolute;
             left: 712px;
             top: 357px;
-            z-index: 3;
         }
         &-2 {
             position: absolute;
             left: 717px;
             top: 361px;
-            z-index: 3;
         }
         &-3 {
             position: absolute;
             left: 723px;
             top: 420px;
-            z-index: 3;
         }
         &-4 {
             position: absolute;
             left: 724px;
             top: 427px;
-            z-index: 3;
         }
         &-5 {
             position: absolute;
             left: 718px;
             top: 419px;
-            z-index: 3;
         }
     }
 }

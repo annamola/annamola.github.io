@@ -12,6 +12,7 @@ import { Storage } from "aws-amplify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
+import { useMediaQuery } from "@mui/material";
 
 const url = `//cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 pdfjs.GlobalWorkerOptions.workerSrc = url;
@@ -157,51 +158,69 @@ const ZinePage = ({ title, paragraph }) => {
             </div>
         );
     }
-
+    const convertToEmbed = useMediaQuery("(max-width: 960px)");
     return (
         <div>
             <Header />
             <HeaderOffset />
-            <div className="zine-page-body">
-                <img src={deskBackground} alt="Wood texture background" className="background"></img>
-                <h2>{title}</h2>
-                {isLoading === true ? <LoadingAnimation></LoadingAnimation> : null}
-
-                <div style={{ display: "flex", zIndex: 10, justifyContent: "center", alignItems: "center" }}>
-                    <button className="button" onClick={togglePrevPage}>
-                        <FontAwesomeIcon size="lg" icon={solid("chevron-left")} />
-                    </button>
-                    <div className="pdf-container">
-                        <div className={`inner section-background ${prevPageFlip || nextPageFlip ? "" : "hidden"}`}>
-                            <Document
-                                file={zinePdf}
-                                className="pdf-container-document"
-                                onLoadSuccess={onDocumentLoadSuccess}
-                            >
-                                <>
-                                    <div className={`pdf-container-document-page-left`} onClick={togglePrevPage}>
-                                        {leftPage - 2 < 1 ? blankPage : <Page pageNumber={leftPage - 2} height={500} />}
-                                    </div>
-                                    {divider}
-                                    <div className={`pdf-container-document-page-right`} onClick={toggleNextPage}>
-                                        {rightPage + 2 > 10 ? (
-                                            blankPage
-                                        ) : (
-                                            <Page pageNumber={rightPage + 2} height={500} />
-                                        )}
-                                    </div>
-                                </>
-                            </Document>
-                        </div>
-                        {Array.from(new Array(numPages), (el, index) =>
-                            index % 2 === 0 ? innerPageSection(index) : null
-                        )}
+            {convertToEmbed ? (
+                <div class="pdf-embed-container">
+                    <div class="pdf-embed">
+                        <embed
+                            src="https://drive.google.com/viewerng/
+viewer?embedded=true&url=https://github.com/annamola/annamola.github.io/raw/main/images/myZine.pdf"
+                            width="100%"
+                            height="100%"
+                        />
                     </div>
-                    <button className="button" onClick={toggleNextPage}>
-                        <FontAwesomeIcon size="lg" icon={solid("chevron-right")} />
-                    </button>
                 </div>
-            </div>
+            ) : (
+                <div className="zine-page-body">
+                    <img src={deskBackground} alt="Wood texture background" className="background"></img>
+                    <h2>{title}</h2>
+                    {isLoading === true ? <LoadingAnimation></LoadingAnimation> : null}
+
+                    <div style={{ display: "flex", zIndex: 10, justifyContent: "center", alignItems: "center" }}>
+                        <button className="button" onClick={togglePrevPage}>
+                            <FontAwesomeIcon size="lg" icon={solid("chevron-left")} />
+                        </button>
+                        <div className="pdf-container">
+                            <div className={`inner section-background ${prevPageFlip || nextPageFlip ? "" : "hidden"}`}>
+                                <Document
+                                    file={zinePdf}
+                                    className="pdf-container-document"
+                                    onLoadSuccess={onDocumentLoadSuccess}
+                                >
+                                    <>
+                                        <div className={`pdf-container-document-page-left`} onClick={togglePrevPage}>
+                                            {leftPage - 2 < 1 ? (
+                                                blankPage
+                                            ) : (
+                                                <Page pageNumber={leftPage - 2} height={500} />
+                                            )}
+                                        </div>
+                                        {divider}
+                                        <div className={`pdf-container-document-page-right`} onClick={toggleNextPage}>
+                                            {rightPage + 2 > 10 ? (
+                                                blankPage
+                                            ) : (
+                                                <Page pageNumber={rightPage + 2} height={500} />
+                                            )}
+                                        </div>
+                                    </>
+                                </Document>
+                            </div>
+                            {Array.from(new Array(numPages), (el, index) =>
+                                index % 2 === 0 ? innerPageSection(index) : null
+                            )}
+                        </div>
+                        <button className="button" onClick={toggleNextPage}>
+                            <FontAwesomeIcon size="lg" icon={solid("chevron-right")} />
+                        </button>
+                    </div>
+                </div>
+            )}
+
             <Footer />
         </div>
     );

@@ -2,14 +2,14 @@ import { Box } from "@mui/material";
 import Grid, { GridProps } from "@mui/material/Grid";
 import Button, { ButtonProps } from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import HeaderOffset from "./HeaderOffset";
 import "./Header.css";
 import AnimatedLogo from "../AnimatedLogo/AnimatedLogo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid, brands } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { Turn as Hamburger } from "hamburger-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { COLORS } from "../theme/theme";
 import { styled } from "@mui/material/styles";
 
@@ -68,8 +68,8 @@ const DropdownBtn = styled(Button)<ButtonProps>(({ theme }) => ({
         backgroundColor: "#D0E4DB",
     },
 }));
+
 const SideBarBtn = styled(Button)<ButtonProps>(({ theme }) => ({
-    backgroundColor: "white",
     borderRadius: 0,
     width: "100%",
     height: 70,
@@ -89,6 +89,12 @@ const Header: React.FunctionComponent = () => {
     const [isOverButton, setOverButton] = React.useState(false);
     const [isOverList, setOverList] = React.useState(false);
     const [listOpen, setListOpen] = React.useState(false);
+
+    const location = useLocation().pathname;
+
+    const isCurPage = (pageName: string) => {
+        return location === `/${pageName}`;
+    };
 
     useLayoutEffect(() => {
         if (listOpen && !isOverButton && !isOverList) {
@@ -178,7 +184,7 @@ const Header: React.FunctionComponent = () => {
                     xs={3}
                     sm={2}
                     md={3}
-                    sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+                    sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}
                 >
                     <Box sx={{ display: { xs: "flex", md: "none" } }}>
                         <Hamburger rounded toggled={isOpen} toggle={setOpen} label="Show menu" />
@@ -186,7 +192,7 @@ const Header: React.FunctionComponent = () => {
                             <div>
                                 <HeaderOffset />
                                 <Link to="/about">
-                                    <SideBarBtn>
+                                    <SideBarBtn sx={isCurPage("about") && { backgroundColor: "rgb(20, 120, 74, 0.2)" }}>
                                         <Typography variant="h4">about</Typography>
                                     </SideBarBtn>
                                 </Link>
