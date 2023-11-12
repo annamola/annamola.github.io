@@ -16,8 +16,6 @@ export const HomePageVisual: React.FunctionComponent = () => {
     const matches = useMediaQuery(theme.breakpoints.up("md"));
     const isMobile = useMediaQuery("(max-width:480px)");
 
-    console.log(matches);
-
     useEffect(() => {
         fetchFrame();
     }, []);

@@ -46,7 +46,6 @@ const P5Test = (props: ComponentProps) => {
     // Clear Screen function
     const clearScreen = (p5: p5Types) => {
         p5.background("#9db5ae");
-        console.log(bgImg);
     };
 
     // Save File Function
