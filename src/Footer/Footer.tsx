@@ -1,7 +1,10 @@
 import React from "react";
 import "./Footer.css";
+import { useTheme } from "@mui/material";
 
 const Footer: React.FunctionComponent = () => {
+    const theme = useTheme();
+
     return (
         <div className="footer">
             <img

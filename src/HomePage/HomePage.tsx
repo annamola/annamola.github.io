@@ -5,10 +5,11 @@ import Footer from "../Footer/Footer";
 import HeaderOffset from "../Header/HeaderOffset";
 import { HomePageVisual } from "./HomePageVisual";
 import { Grid } from "@mui/material";
+import { PageProps } from "../types/PageProps.type";
 
 //https://codepen.io/brettsnaidero/pen/aBmmop
 
-const HomePage = ({ title, paragraph }) => {
+const HomePage: React.FunctionComponent<PageProps> = ({ title, paragraph }) => {
     return (
         <div>
             <Header />

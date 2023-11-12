@@ -1,11 +1,26 @@
-import React, { FunctionComponent } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import HeaderOffset from "../Header/HeaderOffset";
 import Footer from "../Footer/Footer";
-import { Grid } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
 import en from "../translations/en.json";
+import { Storage } from "aws-amplify";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import { PageProps } from "../types/PageProps.type";
 
-const AboutPage = ({ title }) => {
+const AboutPage: React.FunctionComponent<PageProps> = ({ title, paragraph }) => {
+    const [resume, setResume] = useState<string>();
+
+    useEffect(() => {
+        fetchResume();
+    }, []);
+
+    async function fetchResume() {
+        const resume = await Storage.get("assets/pdfs/Anna_Mola_Resume.pdf", {
+            level: "public",
+        });
+        setResume(resume);
+    }
     return (
         <div>
             <Header />
@@ -22,6 +37,9 @@ const AboutPage = ({ title }) => {
                 <Grid item md={6}>
                     <p>{en.ABOUT.ABOUT_ME_PARAGRAPH}</p>
                     <p>{en.ABOUT.ABOUT_ME_TEXT}</p>
+                    <IconButton onClick={() => window.open(resume)}>
+                        <PictureAsPdfIcon />
+                    </IconButton>
                 </Grid>
             </Grid>
             <Footer />

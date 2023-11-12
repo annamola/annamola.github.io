@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 import { useMediaQuery } from "@mui/material";
+import { PageProps } from "../types/PageProps.type";
 
 const url = `//cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 pdfjs.GlobalWorkerOptions.workerSrc = url;
@@ -20,7 +21,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = url;
 // https://codepen.io/diemoritat/pen/LKROYZ?editors=1100
 // inspired by this code pen
 
-const ZinePage = ({ title, paragraph }) => {
+const ZinePage: React.FunctionComponent<PageProps> = ({ title, paragraph }) => {
     const [isLoading, setLoading] = useState(true);
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);

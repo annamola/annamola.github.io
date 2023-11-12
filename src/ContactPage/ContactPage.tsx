@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HeaderOffset from "../Header/HeaderOffset";
@@ -6,13 +6,9 @@ import "./ContactPage.scss";
 import { Grid, Paper, Button, Container, TextField, Typography, Stack } from "@mui/material";
 import useBreakpoints from "../hooks/useBreakpoints";
 import SendIcon from "@mui/icons-material/Send";
+import { PageProps } from "../types/PageProps.type";
 
-type ContactPageProps = {
-    title: string;
-    paragraph: string;
-};
-
-const ContactPage: FunctionComponent<ContactPageProps> = ({ title, paragraph }) => {
+const ContactPage: React.FunctionComponent<PageProps> = ({ title, paragraph }) => {
     const { isMobile, isSm } = useBreakpoints();
 
     return (

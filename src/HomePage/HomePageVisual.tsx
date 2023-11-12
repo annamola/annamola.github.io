@@ -8,9 +8,9 @@ import { regular } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-export const HomePageVisual = () => {
-    const [frame, setFrame] = useState();
-    const [isCold, setCold] = useState(false);
+export const HomePageVisual: React.FunctionComponent = () => {
+    const [, setFrame] = useState<string>();
+    const [isCold, setCold] = useState<boolean>(false);
 
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up("md"));
@@ -81,7 +81,7 @@ export const HomePageVisual = () => {
                 <div className="teapot-container">
                     <img src={teapotCrop} alt="teapot" className="teapot-crop" />
                 </div>
-                {/* <h1>Welcome!</h1>
+                <h1>Welcome!</h1>
                 <div
                     className="option-1"
                     onClick={() => {
@@ -99,7 +99,7 @@ export const HomePageVisual = () => {
                 >
                     {radioButton(!isCold)}
                     <p>Cool my tea</p>
-                </div> */}
+                </div>
                 {/* <div className="background-circle">
                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -129,8 +129,6 @@ c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1-5.6-19.9,1.6-27c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1
                             <div className="tea-steam-2">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    // x="0px"
-                                    // y="0px"
                                     viewBox="0 0 200 200"
                                     xmlSpace="preserve"
                                     enableBackground={"new 0 0 200 200"}
@@ -183,7 +181,9 @@ c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1-5.6-19.9,1.6-27c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1
                                                 r="3"
                                                 fill={greenGradient[Math.floor(i / 2)]}
                                             >
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 2}s`} attributeName="cx" to="0" />
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 2}s`} attributeName="cy" to="0" />
                                                 <animateMotion
                                                     begin={`${i / 2}s`}
@@ -222,7 +222,9 @@ c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1-5.6-19.9,1.6-27c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1
                                                 r="4"
                                                 fill={greenGradient[Math.floor(i / 2)]}
                                             >
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 3}s`} attributeName="cx" to="0" />
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 3}s`} attributeName="cy" to="0" />
                                                 <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
                                                     <mpath xlinkHref="#teapot-steam-2"></mpath>
@@ -256,7 +258,9 @@ c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1-5.6-19.9,1.6-27c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1
                                                 r="5"
                                                 fill={greenGradient[Math.floor(i / 2)]}
                                             >
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 2}s`} attributeName="cx" to="0" />
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 2}s`} attributeName="cy" to="0" />
                                                 <animateMotion begin={`${i / 2}s`} dur="10s" repeatCount="indefinite">
                                                     <mpath xlinkHref="#teapot-steam-3"></mpath>
@@ -290,7 +294,9 @@ c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1-5.6-19.9,1.6-27c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1
                                                 r="2"
                                                 fill={greenGradient[Math.floor(i / 3)]}
                                             >
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 3}s`} attributeName="cx" to="0" />
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 3}s`} attributeName="cy" to="0" />
                                                 <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
                                                     <mpath xlinkHref="#teapot-steam-4"></mpath>
@@ -325,7 +331,9 @@ c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1-5.6-19.9,1.6-27c7.1-7.1,19.9,5.6,27-1.6c7.1-7.1
                                                 r="2.5"
                                                 fill={greenGradient[Math.floor(i / 3)]}
                                             >
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 3}s`} attributeName="cx" to="0" />
+                                                {/* @ts-ignore */}
                                                 <set begin={`${i / 3}s`} attributeName="cy" to="0" />
                                                 <animateMotion begin={`${i / 3}s`} dur="10s" repeatCount="indefinite">
                                                     <mpath xlinkHref="#teapot-steam-5"></mpath>
