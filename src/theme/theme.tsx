@@ -7,6 +7,15 @@ export const COLORS = {
 };
 
 export const theme = createTheme({
+    palette: {
+        mode: "light",
+        primary: {
+            main: "#14784A",
+        },
+        secondary: {
+            main: "#f50057",
+        },
+    },
     typography: {
         h1: {
             fontWeight: 600,

@@ -244,7 +244,9 @@ const Header: React.FunctionComponent = () => {
                                       ))
                                     : null}
                                 <Link to="/contact">
-                                    <SideBarBtn>
+                                    <SideBarBtn
+                                        sx={isCurPage("contact") && { backgroundColor: "rgb(20, 120, 74, 0.2)" }}
+                                    >
                                         <Typography variant="h4">contact</Typography>
                                     </SideBarBtn>
                                 </Link>
