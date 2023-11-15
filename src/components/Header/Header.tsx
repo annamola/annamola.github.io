@@ -104,7 +104,7 @@ const Header: React.FunctionComponent = () => {
         }
     }, [isOverButton, isOverList, listOpen]);
 
-    const dropdownOpts = ["art", "zine", "web design", "mobile app design", "this website"];
+    const dropdownOpts = ["art", "zine", "web design", "mobile app design"];
     return (
         <div className="header">
             <HeaderGrid container>

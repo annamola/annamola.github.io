@@ -6,6 +6,7 @@ import "@aws-amplify/ui-react/styles.css";
 import { Amplify } from "aws-amplify";
 import aws_exports from "./aws-exports";
 import en from "./translations/en.json";
+import UnderConstructionPage from "./pages/UnderConstructionPage/UnderConstructionPage";
 
 Amplify.configure(aws_exports);
 
@@ -23,11 +24,47 @@ const App = () => {
                     />
                 }
             />
-            <Route path="/art" element={<ArtPage title="art" paragraph="..." />} />
+            <Route
+                path="/art"
+                element={
+                    <UnderConstructionPage
+                        title="Hi! This page is currently under construction."
+                        paragraph="Check out the v1 version here!"
+                        link="https://annamola.github.io/art.html"
+                    />
+                }
+            />
             <Route path="/zine" element={<ZinePage title="zine" paragraph="..." />} />
-            <Route path="/web-design" element={<ContactPage title="web" paragraph="..." />} />
-            <Route path="/mobile-app-design" element={<ContactPage title="mobile" paragraph="..." />} />
-            <Route path="/this-website" element={<ContactPage title="mobile" paragraph="..." />} />
+            <Route
+                path="/web-design"
+                element={
+                    <UnderConstructionPage
+                        title="Hi! This page is currently under construction."
+                        paragraph="Check out the v1 version here!"
+                        link="https://annamola.github.io/websites.html"
+                    />
+                }
+            />
+            <Route
+                path="/mobile-app-design"
+                element={
+                    <UnderConstructionPage
+                        title="Hi! This page is currently under construction."
+                        paragraph="Check out the v1 version here!"
+                        link="https://annamola.github.io/programming.html"
+                    />
+                }
+            />
+            <Route
+                path="/this-website"
+                element={
+                    <UnderConstructionPage
+                        title="Hi! This page is currently under construction."
+                        paragraph="Check out the v1 version here!"
+                        link="https://annamola.github.io/websites.html"
+                    />
+                }
+            />
             <Route path="*" element={<ErrorPage title="Error" paragraph="..." />} />
         </Routes>
     );
