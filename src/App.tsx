@@ -14,7 +14,16 @@ const App = () => {
     return (
         <Routes>
             <Route path="/" element={<HomePage title="Welcome!" paragraph="To this example" />} />
-            <Route path="/about" element={<AboutPage title={en.ABOUT.TITLE} paragraph="To this example" />} />
+            <Route
+                path="/about"
+                element={
+                    <UnderConstructionPage
+                        title="This page is currently under construction."
+                        paragraph="Check out the original version here!"
+                        link="https://annamola.github.io/about.html"
+                    />
+                }
+            />
             <Route
                 path="/contact"
                 element={
@@ -29,7 +38,7 @@ const App = () => {
                 element={
                     <UnderConstructionPage
                         title="Hi! This page is currently under construction."
-                        paragraph="Check out the v1 version here!"
+                        paragraph="Check out the original version here!"
                         link="https://annamola.github.io/art.html"
                     />
                 }
@@ -40,7 +49,7 @@ const App = () => {
                 element={
                     <UnderConstructionPage
                         title="Hi! This page is currently under construction."
-                        paragraph="Check out the v1 version here!"
+                        paragraph="Check out the original version here!"
                         link="https://annamola.github.io/websites.html"
                     />
                 }
@@ -50,7 +59,7 @@ const App = () => {
                 element={
                     <UnderConstructionPage
                         title="Hi! This page is currently under construction."
-                        paragraph="Check out the v1 version here!"
+                        paragraph="Check out the original version here!"
                         link="https://annamola.github.io/programming.html"
                     />
                 }
@@ -60,7 +69,7 @@ const App = () => {
                 element={
                     <UnderConstructionPage
                         title="Hi! This page is currently under construction."
-                        paragraph="Check out the v1 version here!"
+                        paragraph="Check out the original version here!"
                         link="https://annamola.github.io/websites.html"
                     />
                 }
