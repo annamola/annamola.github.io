@@ -1,0 +1,10 @@
+{
+    "resourceName": "s3d5b86d13",
+    "policyUUID": "d5b86d13",
+    "bucketName": "annamolaportfolioc09a1d3a53ba49a6ac6805e3f5779d",
+    "storageAccess": "authAndGuest",
+    "guestAccess": ["READ"],
+    "authAccess": ["READ", "CREATE_AND_UPDATE", "DELETE"],
+    "triggerFunction": "NONE",
+    "groupAccess": {}
+}

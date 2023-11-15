@@ -1,0 +1,49 @@
+{
+    "api": {
+        "annamolaportfolio": {
+            "dependsOn": [],
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [],
+                    "defaultAuthentication": {
+                        "apiKeyConfig": {
+                            "apiKeyExpirationDate": "2024-11-11T05:02:49.933Z",
+                            "apiKeyExpirationDays": 365,
+                            "description": "graphQL-API"
+                        },
+                        "authenticationType": "API_KEY"
+                    }
+                }
+            },
+            "providerPlugin": "awscloudformation",
+            "service": "AppSync"
+        }
+    },
+    "auth": {
+        "annamolaportfolio08d077e5": {
+            "customAuth": false,
+            "dependsOn": [],
+            "frontendAuthConfig": {
+                "mfaConfiguration": "OFF",
+                "mfaTypes": ["SMS"],
+                "passwordProtectionSettings": {
+                    "passwordPolicyCharacters": [],
+                    "passwordPolicyMinLength": 8
+                },
+                "signupAttributes": ["EMAIL"],
+                "socialProviders": [],
+                "usernameAttributes": [],
+                "verificationMechanisms": ["EMAIL"]
+            },
+            "providerPlugin": "awscloudformation",
+            "service": "Cognito"
+        }
+    },
+    "storage": {
+        "s3d5b86d13": {
+            "dependsOn": [],
+            "providerPlugin": "awscloudformation",
+            "service": "S3"
+        }
+    }
+}

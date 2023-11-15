@@ -1,0 +1,9 @@
+# Ignore artifacts:
+/build
+
+# next.js
+/.next/
+/.vscode/
+/.vscode/
+/out/
+/node_modules/

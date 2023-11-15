@@ -1,0 +1,16 @@
+.logo-container {
+    flex: 1;
+    display: flex;
+    max-height: 5rem;
+}
+.logo-text {
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    a {
+        display: flex;
+        color: rgb(22, 22, 22);
+    }
+}
