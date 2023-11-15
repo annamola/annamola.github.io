@@ -9,6 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@aws-amplify/adapter-nextjs": "^1.0.2",
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
         "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -19,9 +20,9 @@
         "@mui/icons-material": "^5.14.16",
         "@mui/material": "^5.14.17",
         "@mui/system": "^5.10.10",
-        "aws-amplify": "^5.2.1",
+        "aws-amplify": "^6.0.2",
         "hamburger-react": "^2.5.0",
-        "next": "14.0.2",
+        "next": "^14.0.2",
         "react": "^18",
         "react-dom": "^18",
         "react-p5": "^1.3.30",

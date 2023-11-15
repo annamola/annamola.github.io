@@ -17,7 +17,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
 import { Amplify } from 'aws-amplify'
-import aws_exports from '../aws-exports'
+import aws_exports from '@/amplifyconfiguration.json'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -26,7 +26,9 @@ interface MyAppProps extends AppProps {
     emotionCache?: EmotionCache
 }
 
-Amplify.configure(aws_exports)
+Amplify.configure(aws_exports, {
+    ssr: true, // required when using Amplify with Next.js
+})
 
 const cssVarTheme = extendTheme(theme, {
     cssVarPrefix: 'mui',

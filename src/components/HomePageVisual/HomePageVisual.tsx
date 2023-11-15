@@ -10,21 +10,9 @@ import { faCircle, faCircleDot } from '@fortawesome/free-regular-svg-icons'
 import { Typography } from '@mui/material'
 
 export const HomePageVisual: React.FC = () => {
-    const [, setFrame] = useState<string>()
     const [isCold, setCold] = useState<boolean>(false)
 
     const isMobile = useMediaQuery('(max-width:480px)')
-
-    useEffect(() => {
-        fetchFrame()
-    }, [])
-
-    async function fetchFrame() {
-        const frame = await Storage.get('assets/images/frame.webp', {
-            level: 'public',
-        })
-        setFrame(frame)
-    }
     function radioButton(selected: boolean) {
         return selected ? (
             <FontAwesomeIcon
