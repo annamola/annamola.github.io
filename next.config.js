@@ -2,9 +2,6 @@
 const path = require('path')
 const nextConfig = {
     output: 'export',
-    images: {
-        unoptimized: true,
-    },
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
@@ -14,12 +11,7 @@ const nextConfig = {
         return config
     },
     images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'media2.giphy.com',
-            },
-        ],
+        unoptimized: true,
     },
 }
 
