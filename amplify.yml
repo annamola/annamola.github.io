@@ -16,7 +16,7 @@ frontend:
                 - nvm use 18
                 - npm run build
     artifacts:
-        baseDirectory: .next
+        baseDirectory: build
         files:
             - "**/*"
     cache:

@@ -77,6 +77,10 @@ typings/
 
 # Next.js build output
 .next
+next-env.d.ts
+
+#build
+out
 
 # Nuxt.js build / generate output
 .nuxt
